@@ -20,6 +20,7 @@ import { SocialLoginDirective } from './social-login/social-login.directive';
     MatInputModule,
     MatIconModule,
     MatCardModule,
+
   ],
   declarations: [LoginComponent, SocialLoginDirective],
   exports: [LoginComponent, SocialLoginDirective],

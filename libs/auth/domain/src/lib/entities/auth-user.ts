@@ -1,9 +1,10 @@
 import { User } from 'firebase/app';
+import { AccountUser } from './account-user';
 
 export interface AuthUser extends User {
-  id: string;
+  uid: string;
   // name: string;
-  description?: string;
+  account?: AccountUser;
 }
 // export interface User extends UserInfo {
 //   id: string;

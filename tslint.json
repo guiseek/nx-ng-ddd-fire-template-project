@@ -86,6 +86,15 @@
             ]
           },
           {
+            "sourceTag": "type:shell",
+            "onlyDependOnLibsWithTags": [
+              "type:ui",
+              "type:domain-logic",
+              "type:util",
+              "type:feature"
+            ]
+          },
+          {
             "sourceTag": "type:feature",
             "onlyDependOnLibsWithTags": [
               "type:ui",
@@ -116,6 +125,20 @@
             "sourceTag": "domain:auth",
             "onlyDependOnLibsWithTags": [
               "domain:auth",
+              "domain:shared"
+            ]
+          },
+          {
+            "sourceTag": "domain:shared",
+            "onlyDependOnLibsWithTags": [
+              "domain:shared",
+              "domain:shared"
+            ]
+          },
+          {
+            "sourceTag": "domain:catalog",
+            "onlyDependOnLibsWithTags": [
+              "domain:catalog",
               "domain:shared"
             ]
           }

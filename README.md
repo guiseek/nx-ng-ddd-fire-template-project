@@ -12,9 +12,24 @@ ng g @angular-architects/ddd:domain booking
 
 cp apps/webapp/src/environments .
 
+# Auth
 ng g @angular-architects/ddd:domain auth
-
 ng g @angular-architects/ddd:feature login --domain auth --app webapp --entity auth-user
+ng g @angular-architects/ddd:feature account --domain auth --app webapp --entity account-user
+
+# Shared domain
+ng g @angular-architects/ddd:domain shared
+ng g s services/firestore --project shared-domain
+
+# Auth shell
+ng generate @nrwl/angular:library --name=shell --style=scss --directory=auth --lazy --parentModule=apps/webapp/src/app/app.module.ts --routing
+ng generate @schematics/angular:component --name=auth-shell --project=auth-shell --style=scss --displayBlock
+
+# Catalog
+ng g @angular-architects/ddd:domain catalog
+ng g @angular-architects/ddd:feature browse-products --domain catalog --app webapp --entity product
+ng generate @nrwl/angular:library --name=shell --style=scss --directory=catalog --lazy --parentModule=apps/webapp/src/app/app.module.ts --routing
+ng generate @schematics/angular:component --name=catalog-shell --project=catalog-shell --style=scss --displayBlock
 
 ```
 

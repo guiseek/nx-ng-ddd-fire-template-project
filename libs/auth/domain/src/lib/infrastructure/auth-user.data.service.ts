@@ -22,7 +22,7 @@ export class AuthUserDataService {
     private afa: AngularFireAuth
   ) {
     this.user$ = this.afa.authState.pipe(
-      map(user => !!user ? (user as AuthUser) : null)
+      map(user => !!user ? user : null)
     );
   }
 
