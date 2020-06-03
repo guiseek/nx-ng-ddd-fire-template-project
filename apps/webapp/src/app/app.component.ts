@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@dekao/api-interfaces';
+import { Component } from '@angular/core';
+import { LoginFacade } from '@dekao/auth/domain';
 
 @Component({
   selector: 'dekao-root',
@@ -8,6 +8,9 @@ import { Message } from '@dekao/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  // hello$ = this.http.get<Message>('/api/hello');
+  constructor(
+    private http: HttpClient,
+    public loginFacade: LoginFacade
+  ) { }
 }

@@ -16,7 +16,12 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@dekao/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@env": ["environments/environment.ts"],
+      "@env/*": ["environments/*"],
+      "@dekao/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@dekao/auth/domain": ["libs/auth/domain/src/index.ts"],
+      "@dekao/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
+      "@dekao/auth/feature-account": ["libs/auth/feature-account/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

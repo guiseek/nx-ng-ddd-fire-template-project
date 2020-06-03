@@ -1,5 +1,23 @@
 # Dekao
 
+```sh
+# Node 10.17
+ng add @angular/fire
+
+npm i @angular/fire firebase
+
+ng add @angular-architects/ddd
+
+ng g @angular-architects/ddd:domain booking
+
+cp apps/webapp/src/environments .
+
+ng g @angular-architects/ddd:domain auth
+
+ng g @angular-architects/ddd:feature login --domain auth --app webapp --entity auth-user
+
+```
+
 This project was generated using [Nx](https://nx.dev).
 
 <p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>

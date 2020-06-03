@@ -29,8 +29,8 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "apps/webapp/src/environments/environment.ts",
-                  "with": "apps/webapp/src/environments/environment.prod.ts"
+                  "replace": "environments/environment.ts",
+                  "with": "environments/environment.prod.ts"
                 }
               ],
               "optimization": true,
@@ -92,6 +92,10 @@
             "passWithNoTests": true,
             "setupFile": "apps/webapp/src/test-setup.ts"
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
@@ -200,6 +204,138 @@
             "tsConfig": "libs/api-interfaces/tsconfig.spec.json",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "auth-domain": {
+      "projectType": "library",
+      "root": "libs/auth/domain",
+      "sourceRoot": "libs/auth/domain/src",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/auth/domain/tsconfig.lib.json",
+            "project": "libs/auth/domain/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/auth/domain/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/auth/domain/tsconfig.lib.json",
+              "libs/auth/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/auth/domain/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/domain/jest.config.js",
+            "tsConfig": "libs/auth/domain/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/auth/domain/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-feature-login": {
+      "projectType": "library",
+      "root": "libs/auth/feature-login",
+      "sourceRoot": "libs/auth/feature-login/src",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/auth/feature-login/tsconfig.lib.json",
+            "project": "libs/auth/feature-login/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/auth/feature-login/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/auth/feature-login/tsconfig.lib.json",
+              "libs/auth/feature-login/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/auth/feature-login/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/feature-login/jest.config.js",
+            "tsConfig": "libs/auth/feature-login/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/auth/feature-login/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "auth-feature-account": {
+      "projectType": "library",
+      "root": "libs/auth/feature-account",
+      "sourceRoot": "libs/auth/feature-account/src",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/auth/feature-account/tsconfig.lib.json",
+            "project": "libs/auth/feature-account/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/auth/feature-account/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/auth/feature-account/tsconfig.lib.json",
+              "libs/auth/feature-account/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/auth/feature-account/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/feature-account/jest.config.js",
+            "tsConfig": "libs/auth/feature-account/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/auth/feature-account/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
         }
       }
     }

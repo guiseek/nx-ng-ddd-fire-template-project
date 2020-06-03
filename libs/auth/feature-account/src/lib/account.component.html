@@ -1,0 +1,9 @@
+<h1>auth-account</h1>
+
+<table class="table">
+    <tr *ngFor="let accountUser of accountUserList$ | async">
+        <td>{{accountUser.id}}</td>
+        <td>{{accountUser.name}}</td>
+        <td>{{accountUser.description}}</td>
+    </tr>
+</table>

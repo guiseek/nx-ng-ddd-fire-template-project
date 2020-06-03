@@ -1,0 +1,50 @@
+<h1>auth-login</h1>
+
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-card>
+    <mat-card-title *ngIf="loginFacade.user$ | async as user">
+      {{ user.displayName }}
+    </mat-card-title>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email">
+      <mat-error>Inválildo</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Senha</mat-label>
+      <input type="password" matInput formControlName="password">
+      <mat-error>Inváliida</mat-error>
+    </mat-form-field>
+
+    <mat-card-content>
+      {{ error$ | async }}
+    </mat-card-content>
+    <mat-card-actions>
+
+      <button type="button" mat-button (click)="loginFacade.logout()">
+        Sair
+      </button>
+
+      <button type="button" mat-stroked-button [authSocialLogin]="'google'">
+        Usar Google
+      </button>
+
+      <button mat-raised-button color="primary">
+        Login
+      </button>
+
+
+    </mat-card-actions>
+  </mat-card>
+</form>
+
+<!-- <table class="table">
+  <tr *ngFor="let authUser of authUserList$ | async">
+    <td>{{authUser.id}}</td>
+    <td>{{authUser.name}}</td>
+    <td>{{authUser.description}}</td>
+  </tr>
+</table> -->

@@ -31,6 +31,15 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "auth-domain": {
+      "tags": ["domain:auth", "type:domain-logic"]
+    },
+    "auth-feature-login": {
+      "tags": ["domain:auth", "type:feature"]
+    },
+    "auth-feature-account": {
+      "tags": ["domain:auth", "type:feature"]
     }
   }
 }
