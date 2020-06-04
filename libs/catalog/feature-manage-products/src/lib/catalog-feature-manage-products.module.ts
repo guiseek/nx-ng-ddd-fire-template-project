@@ -10,6 +10,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { CatalogDomainModule } from '@dekao/catalog/domain';
 import { SharedUiCurrencyModule } from '@dekao/shared/ui-currency';
+// import { SharedUiDatetimeModule } from '@dekao/shared/ui-datetime';
+import { SharedUiSelectModule } from '@dekao/shared/ui/select';
+import { ProductFormComponent } from './components/product-form/product-form.component';
 import { ManageProductsComponent } from './manage-products.component';
 
 @NgModule({
@@ -23,10 +26,12 @@ import { ManageProductsComponent } from './manage-products.component';
     FlexLayoutModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    SharedUiSelectModule,
     SharedUiCurrencyModule,
+    // SharedUiDatetimeModule,
     CatalogDomainModule,
   ],
-  declarations: [ManageProductsComponent],
-  exports: [ManageProductsComponent],
+  declarations: [ManageProductsComponent, ProductFormComponent],
+  exports: [ManageProductsComponent, ProductFormComponent],
 })
 export class CatalogFeatureManageProductsModule {}

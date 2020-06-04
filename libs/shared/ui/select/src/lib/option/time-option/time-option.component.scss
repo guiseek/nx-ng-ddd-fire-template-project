@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  small {
+    opacity: 0.5;
+    font-size: 70%;
+  }
+}

@@ -654,6 +654,70 @@
           }
         }
       }
+    },
+    "shared-ui-datetime": {
+      "projectType": "library",
+      "root": "libs/shared/ui-datetime",
+      "sourceRoot": "libs/shared/ui-datetime/src",
+      "prefix": "dekao",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui-datetime/tsconfig.lib.json",
+              "libs/shared/ui-datetime/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui-datetime/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui-datetime/jest.config.js",
+            "tsConfig": "libs/shared/ui-datetime/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/ui-datetime/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "shared-ui-select": {
+      "projectType": "library",
+      "root": "libs/shared/ui/select",
+      "sourceRoot": "libs/shared/ui/select/src",
+      "prefix": "dekao",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/select/tsconfig.lib.json",
+              "libs/shared/ui/select/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui/select/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/select/jest.config.js",
+            "tsConfig": "libs/shared/ui/select/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/ui/select/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

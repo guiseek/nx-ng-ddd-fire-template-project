@@ -64,6 +64,12 @@
     },
     "shared-util-testing": {
       "tags": []
+    },
+    "shared-ui-datetime": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "shared-ui-select": {
+      "tags": []
     }
   }
 }

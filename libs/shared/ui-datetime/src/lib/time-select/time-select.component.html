@@ -1,0 +1,15 @@
+<mat-form-field>
+  <!-- <mat-label></mat-label> -->
+  <mat-icon matPrefix>access_time</mat-icon>
+  <mat-select
+    [disabled]="disabled"
+		[placeholder]="placeholder"
+		(selectionChange)="onSelected($event)"
+    [(ngModel)]="selected"
+  >
+    <mat-option *ngFor="let option of options" [value]="option.value">
+      <ng-container [ngTemplateOutlet]="option?.templateRef"></ng-container>
+    </mat-option>
+  </mat-select>
+  <mat-error>Inválido</mat-error>
+</mat-form-field>

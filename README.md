@@ -44,6 +44,21 @@ ng generate @schematics/angular:directive --name=currency-field --project=shared
 
 npm i ngx-currency
 
+npm i @ngneat/spectator --save-dev
+
+
+# Ui Select
+ng generate @nrwl/angular:library --name=select --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=select --project=shared-ui-select --flat --style=scss --export --withHost
+ng generate @ngneat/spectator:spectator-component --name=select --project=shared-ui-select --flat --style=scss --export --withHost
+ng generate @ngneat/spectator:spectator-component --name=option-group --project=shared-ui-select --style=scss --export --withCustomHost
+ng generate @ngneat/spectator:spectator-component --name=option --project=shared-ui-select --style=scss --export --withCustomHost
+ng generate @ngneat/spectator:spectator-component --name=option/time-option --project=shared-ui-select --style=scss --export --withCustomHost
+
+
+ng generate @ngneat/spectator:spectator-component --name=time-select --project=shared-ui-datetime --style=scss --export --withHost
+ng generate @ngneat/spectator:spectator-component --name=time-select/time-option --project=shared-ui-datetime --style=scss --export --withCustomHost
 ```
 
 This project was generated using [Nx](https://nx.dev).

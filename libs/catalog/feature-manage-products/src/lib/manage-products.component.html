@@ -1,6 +1,11 @@
 <h1>catalog-manage-products</h1>
 
-<form fxLayout="column" [formGroup]="form" (ngSubmit)="onSubmit()">
+<catalog-product-form
+  (valueChange)="formChaged($event)"
+  (valueSubmitted)="formSubmitted($event)"
+></catalog-product-form>
+
+<!-- <form fxLayout="column" [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-form-field>
     <mat-label>Produto</mat-label>
     <input type="text" matInput formControlName="name">
@@ -31,15 +36,15 @@
     <mat-error></mat-error>
   </mat-form-field>
 
+  <dekao-time-select formControlName="timestamp">
+    <dekao-time-option *ngFor="let time of times" [value]="time">
+      {{ time | date:'hh:mm a' }}
+    </dekao-time-option>
+  </dekao-time-select>
+
   <button mat-button>Salvar</button>
 
-  <pre>{{ form.value | json }}</pre>
-  <!-- <mat-form-field>
-    <mat-label>Preço</mat-label>
-    <input type="text" matInput #priceInput (input)="formatCurrency(priceInput)" formControlName="price">
-    <mat-error></mat-error>
-  </mat-form-field> -->
-</form>
+</form> -->
 
 <!-- <dekao-form-currency></dekao-form-currency> -->
 

@@ -1,7 +1,7 @@
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Component, Input, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ManageProductsFacade } from '@dekao/catalog/domain';
+import { ManageProductsFacade, Product } from '@dekao/catalog/domain';
 import { take } from 'rxjs/operators';
 
 @Component({
@@ -16,6 +16,7 @@ export class ManageProductsComponent implements OnInit {
   productCategoryList$ = this._manageProducts.productCategoryList$;
 
   form: FormGroup;
+  times: Array<Date> = [];
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   triggerResize() {
@@ -28,6 +29,9 @@ export class ManageProductsComponent implements OnInit {
     private builder: FormBuilder,
     private _manageProducts: ManageProductsFacade
   ) {
+    const date = new Date();
+    this.times = Array.from({ length: 24 })
+      .map((v, i) => new Date(date.setHours(i, 0, 0)));
     this.form = this.builder.group({
       id: [],
       name: ['', [
@@ -40,6 +44,9 @@ export class ManageProductsComponent implements OnInit {
         Validators.required,
         Validators.min(1),
         // Validators.pattern('[0-9|,?|.?]*')
+      ]],
+      timestamp: [new Date(), [
+        Validators.required
       ]],
       productCategoryId: []
     });
@@ -67,6 +74,14 @@ export class ManageProductsComponent implements OnInit {
     this._manageProducts.load();
   }
 
+  formChaged(product: Partial<Product>) {
+    console.log(product);
+
+  }
+  formSubmitted(product: Product) {
+    console.log(product);
+
+  }
   onSubmit() {
     console.log(this.form.value);
 
