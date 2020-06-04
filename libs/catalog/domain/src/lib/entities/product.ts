@@ -1,8 +1,9 @@
-import { DocumentBase } from '@dekao/shared/domain';
+import { DocumentBase, DocumentLogs } from '@dekao/shared/domain';
 
-export interface Product extends DocumentBase {
+export interface Product extends DocumentBase, DocumentLogs {
   id: string;
   name: string;
   description: string;
+  productCategoryId?: string[];
   price?: number;
 }

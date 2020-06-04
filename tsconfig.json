@@ -28,7 +28,12 @@
       "@dekao/catalog/feature-browse-products": [
         "libs/catalog/feature-browse-products/src/index.ts"
       ],
-      "@dekao/catalog/shell": ["libs/catalog/shell/src/index.ts"]
+      "@dekao/catalog/shell": ["libs/catalog/shell/src/index.ts"],
+      "@dekao/catalog/feature-manage-products": [
+        "libs/catalog/feature-manage-products/src/index.ts"
+      ],
+      "@dekao/shared/ui-currency": ["libs/shared/ui-currency/src/index.ts"],
+      "@dekao/shared/util-testing": ["libs/shared/util-testing/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

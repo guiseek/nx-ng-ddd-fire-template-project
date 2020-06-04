@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AccountFacade } from '@dekao/auth/domain';
 
 @Component({
@@ -7,22 +7,22 @@ import { AccountFacade } from '@dekao/auth/domain';
   styleUrls: ['./account.component.scss']
 })
 export class AccountComponent implements OnInit {
-    
-    
-    accountUserList$ = this.accountFacade.accountUserList$;
 
 
-    constructor(private accountFacade: AccountFacade) {
-    }
+  accountUserList$ = this.accountFacade.accountUserList$;
+  accountUser$ = this.accountFacade.accountUser$;
 
-    
-    ngOnInit() {
-        this.load();
-    }
+  constructor(private accountFacade: AccountFacade) {
+  }
 
-    load(): void {
-        this.accountFacade.load();
-    }
+
+  ngOnInit() {
+    this.load();
+  }
+
+  load(): void {
+    this.accountFacade.load();
+  }
 
 }
 

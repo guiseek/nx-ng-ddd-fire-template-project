@@ -3,8 +3,10 @@
 ```sh
 # Node 10.17
 ng add @angular/fire
+ng add @angular/material
 
 npm i @angular/fire firebase
+npm i @angular/flex-layout
 
 ng add @angular-architects/ddd
 
@@ -30,6 +32,17 @@ ng g @angular-architects/ddd:domain catalog
 ng g @angular-architects/ddd:feature browse-products --domain catalog --app webapp --entity product
 ng generate @nrwl/angular:library --name=shell --style=scss --directory=catalog --lazy --parentModule=apps/webapp/src/app/app.module.ts --routing
 ng generate @schematics/angular:component --name=catalog-shell --project=catalog-shell --style=scss --displayBlock
+
+ng g @angular-architects/ddd:feature manage-products --domain catalog --entity product-category
+
+
+ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
+
+ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
+
+ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
+
+npm i ngx-currency
 
 ```
 

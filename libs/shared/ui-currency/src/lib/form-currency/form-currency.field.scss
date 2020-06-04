@@ -1,0 +1,15 @@
+:host {
+  display: inline-flex;
+  width: 100px;
+}
+.mat-form-field {
+  width: 100px;
+}
+:host ::ng-deep .mat-form-field-prefix {
+  opacity: 0.2;
+  padding-bottom: 2px;
+  align-self: flex-end;
+}
+:host .ng-invalid .mat-icon {
+  color: red;
+}

@@ -54,7 +54,16 @@
       "tags": ["domain:catalog", "type:feature"]
     },
     "catalog-shell": {
-      "tags": ["domain:catalog", "type:shell"]
+      "tags": ["type:shell"]
+    },
+    "catalog-feature-manage-products": {
+      "tags": ["domain:catalog", "type:feature"]
+    },
+    "shared-ui-currency": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "shared-util-testing": {
+      "tags": []
     }
   }
 }

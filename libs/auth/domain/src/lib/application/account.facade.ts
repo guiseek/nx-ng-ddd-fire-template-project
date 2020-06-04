@@ -17,12 +17,12 @@ export class AccountFacade {
   accountUser$ = this.accountUserSubject.asObservable();
 
   constructor(
-    private authUserDataService: AuthUserDataService,
-    private accountUserDataService: AccountUserDataService
+    private _authUser: AuthUserDataService,
+    private _accountUser: AccountUserDataService
   ) {
-    this.authUserDataService.user$.pipe(
+    this._authUser.user$.pipe(
       switchMap(({ uid }) =>
-        this.accountUserDataService.findOneByUid(uid).valueChanges()
+        this._accountUser.byId(uid).valueChanges()
       ))
       .subscribe(account => {
         this.accountUserSubject.next(account)
@@ -30,7 +30,7 @@ export class AccountFacade {
   }
 
   load(): void {
-    this.accountUserDataService.load().subscribe(
+    this._accountUser.load().subscribe(
       accountUserList => {
         this.accountUserListSubject.next(accountUserList)
       },

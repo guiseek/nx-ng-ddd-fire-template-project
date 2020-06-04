@@ -16,20 +16,13 @@ const redirectLoggedInToItems = () => redirectLoggedInTo(['/produtos']);
         component: AuthShellComponent,
         children: [
           {
-            path: '',
+            path: 'login',
             loadChildren: () =>
-              import('@dekao/auth/feature-account').then(
-                (m) => m.AuthFeatureAccountModule
+              import('@dekao/auth/feature-login').then(
+                (m) => m.AuthFeatureLoginModule
               ),
-          }
+          },
         ]
-      },
-      {
-        path: 'login',
-        loadChildren: () =>
-          import('@dekao/auth/feature-login').then(
-            (m) => m.AuthFeatureLoginModule
-          ),
       },
     ]),
   ],

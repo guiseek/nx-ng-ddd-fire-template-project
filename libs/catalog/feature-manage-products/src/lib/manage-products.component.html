@@ -1,0 +1,52 @@
+<h1>catalog-manage-products</h1>
+
+<form fxLayout="column" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Produto</mat-label>
+    <input type="text" matInput formControlName="name">
+    <mat-error>Obrigatório</mat-error>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Descrição</mat-label>
+    <textarea
+      matInput
+      cdkTextareaAutosize
+      #autosize="cdkTextareaAutosize"
+      [cdkAutosizeMinRows]="minRows"
+      [cdkAutosizeMaxRows]="maxRows"
+      formControlName="description"
+      >
+    </textarea>
+    <mat-error>Máximo de 1000 caracteres</mat-error>
+  </mat-form-field>
+
+  <dekao-form-currency formControlName="price">
+    <label>Valor</label>
+    <span>Inválido</span>
+  </dekao-form-currency>
+
+  <mat-form-field>
+    <mat-label>Preço</mat-label>
+    <input type="text" matInput dekaoCurrencyInput formControlName="id">
+    <mat-error></mat-error>
+  </mat-form-field>
+
+  <button mat-button>Salvar</button>
+
+  <pre>{{ form.value | json }}</pre>
+  <!-- <mat-form-field>
+    <mat-label>Preço</mat-label>
+    <input type="text" matInput #priceInput (input)="formatCurrency(priceInput)" formControlName="price">
+    <mat-error></mat-error>
+  </mat-form-field> -->
+</form>
+
+<!-- <dekao-form-currency></dekao-form-currency> -->
+
+<table class="table">
+  <tr *ngFor="let productCategory of productCategoryList$ | async">
+    <td>{{productCategory.id}}</td>
+    <td>{{productCategory.name}}</td>
+    <td>{{productCategory.description}}</td>
+  </tr>
+</table>

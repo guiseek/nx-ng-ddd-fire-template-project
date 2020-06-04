@@ -1,0 +1,16 @@
+<mat-form-field>
+  <mat-icon matPrefix>attach_money</mat-icon>
+  <mat-label>
+    <ng-content select="label"></ng-content>
+  </mat-label>
+  <input
+    type="text"
+    matInput
+    currencyMask
+    [options]="config"
+    [formControl]="control"
+    (blur)="onTouched()">
+  <mat-error>
+    <ng-content select=".error"></ng-content>
+  </mat-error>
+</mat-form-field>

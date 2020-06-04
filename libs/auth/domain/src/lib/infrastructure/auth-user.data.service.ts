@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthUser } from '../entities/auth-user';
 import { Login } from '../entities/login';
+import { AccountUserDataService } from './account-user.data.service';
 
 export type AuthProvider = 'google' | 'github';
 const getProvider = (provider: AuthProvider) => {
@@ -19,7 +20,8 @@ export class AuthUserDataService {
   user$: Observable<AuthUser>;
 
   constructor(
-    private afa: AngularFireAuth
+    private afa: AngularFireAuth,
+    private _accountUser: AccountUserDataService
   ) {
     this.user$ = this.afa.authState.pipe(
       map(user => !!user ? user : null)
@@ -32,7 +34,21 @@ export class AuthUserDataService {
     );
   }
 
-  social(provider) {
+  async register(email: string, password: string, displayName: string, phone = '') {
+    try {
+      const { user, additionalUserInfo } = await this.afa
+        .createUserWithEmailAndPassword(email, password);
+
+      if (additionalUserInfo.isNewUser) {
+        return await user.updateProfile({ displayName });
+      }
+
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  social(provider: AuthProvider) {
     return this.afa.signInWithRedirect(
       getProvider(provider)
     );
