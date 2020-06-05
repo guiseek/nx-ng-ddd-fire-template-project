@@ -11,6 +11,7 @@ export class AccountComponent implements OnInit {
 
   accountUserList$ = this.accountFacade.accountUserList$;
   accountUser$ = this.accountFacade.accountUser$;
+  user$ = this.accountFacade.user$;
 
   constructor(private accountFacade: AccountFacade) {
   }
@@ -18,6 +19,11 @@ export class AccountComponent implements OnInit {
 
   ngOnInit() {
     this.load();
+    this.accountFacade.accountUser$.subscribe(
+      account => {
+        console.log(account)
+      }
+    )
   }
 
   load(): void {

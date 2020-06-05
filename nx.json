@@ -39,7 +39,7 @@
       "tags": ["domain:auth", "type:feature"]
     },
     "auth-feature-account": {
-      "tags": ["domain:auth", "type:feature"]
+      "tags": ["type:feature"]
     },
     "shared-domain": {
       "tags": ["domain:shared", "type:util"]

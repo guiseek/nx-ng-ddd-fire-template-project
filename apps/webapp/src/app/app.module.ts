@@ -19,33 +19,27 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
   imports: [
     BrowserModule,
     HttpClientModule,
-    AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    // AngularFireAuthGuardModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(
-      [
-        {
-          path: 'auth',
-          loadChildren: () =>
-            import('@dekao/auth/shell').then(
-              (module) => module.AuthShellModule
-            ),
-        },
-        {
-          path: '',
-          loadChildren: () =>
-            import('@dekao/catalog/shell').then(
-              (module) => module.CatalogShellModule
-            ),
-          // canActivate: [AngularFireAuthGuard],
-          // data: {
-          //   authGuardPipe: redirectUnauthorizedToLogin
-          // },
-        },
-      ]),
-    // CatalogFeatureBrowseProductsModule,
+    AngularFireModule
+      .initializeApp(environment.firebase),
+    RouterModule.forRoot([
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('@dekao/auth/shell').then(
+            (module) => module.AuthShellModule
+          ),
+      },
+      {
+        path: '',
+        loadChildren: () =>
+          import('@dekao/catalog/shell').then(
+            (module) => module.CatalogShellModule
+          ),
+      },
+    ]),
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }
