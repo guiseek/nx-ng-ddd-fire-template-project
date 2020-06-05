@@ -20,7 +20,12 @@ import { SocialLoginDirective } from './social-login/social-login.directive';
     MatInputModule,
     MatIconModule,
     MatCardModule,
-
+    // RouterModule.forChild([
+    //   {
+    //     path: '',
+    //     component: LoginComponent
+    //   }
+    // ])
   ],
   declarations: [LoginComponent, SocialLoginDirective],
   exports: [LoginComponent, SocialLoginDirective],

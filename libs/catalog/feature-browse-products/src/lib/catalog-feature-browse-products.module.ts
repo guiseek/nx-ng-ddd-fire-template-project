@@ -1,11 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 import { CatalogDomainModule } from '@dekao/catalog/domain';
+import { SharedUiCommonModule, SharedUiMaterialModule } from '@dekao/shared/ui/common';
 import { BrowseProductsComponent } from './browse-products.component';
+import { ListItemsComponent } from './components/list-items/list-items.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
-  imports: [CommonModule, CatalogDomainModule],
-  declarations: [BrowseProductsComponent],
-  exports: [BrowseProductsComponent],
+  imports: [
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    SharedUiCommonModule,
+    SharedUiMaterialModule,
+    CatalogDomainModule
+  ],
+  declarations: [BrowseProductsComponent, SearchComponent, ListItemsComponent],
+  exports: [BrowseProductsComponent, SearchComponent, ListItemsComponent],
 })
 export class CatalogFeatureBrowseProductsModule {}

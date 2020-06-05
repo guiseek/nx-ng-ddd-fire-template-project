@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BrowseProductsFacade } from '@dekao/catalog/domain';
 
 @Component({
@@ -7,22 +7,22 @@ import { BrowseProductsFacade } from '@dekao/catalog/domain';
   styleUrls: ['./browse-products.component.scss']
 })
 export class BrowseProductsComponent implements OnInit {
-    
-    
-    productList$ = this.browseProductsFacade.productList$;
 
 
-    constructor(private browseProductsFacade: BrowseProductsFacade) {
-    }
+  productList$ = this.browseProductsFacade.productList$;
 
-    
-    ngOnInit() {
-        this.load();
-    }
 
-    load(): void {
-        this.browseProductsFacade.load();
-    }
+  constructor(private browseProductsFacade: BrowseProductsFacade) {
+  }
+
+
+  ngOnInit() {
+    this.load();
+  }
+
+  load(): void {
+    this.browseProductsFacade.load();
+  }
 
 }
 

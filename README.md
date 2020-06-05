@@ -35,6 +35,12 @@ ng generate @schematics/angular:component --name=catalog-shell --project=catalog
 
 ng g @angular-architects/ddd:feature manage-products --domain catalog --entity product-category
 
+ng generate @schematics/angular:component --name=product-form --project=manage-products --style=scss --export--no-interactive
+
+ng generate @schematics/angular:guard --name=guards/account --project=catalog-shell --skipTests --no-interactive
+
+ng generate @schematics/angular:guard --name=guards/account --project=catalog-shell --skipTests --no-interactive
+
 
 ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
 
@@ -45,6 +51,14 @@ ng generate @schematics/angular:directive --name=currency-field --project=shared
 npm i ngx-currency
 
 npm i @ngneat/spectator --save-dev
+
+ng generate @ngneat/spectator:spectator-component --name=components/search --project=catalog-feature-browse-products --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=components/list-items --project=catalog-feature-browse-products --style=scss --changeDetection=OnPush --export --withHost
+
+# Ui Common
+ng generate @nrwl/angular:library --name=common --directory=shared/ui --tags=type:ui
+
 
 
 # Ui Select
