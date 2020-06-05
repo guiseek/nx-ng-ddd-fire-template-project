@@ -45,13 +45,13 @@
       "tags": ["domain:shared", "type:util"]
     },
     "auth-shell": {
-      "tags": []
+      "tags": ["type:shell"]
     },
     "catalog-domain": {
       "tags": ["domain:catalog", "type:domain-logic"]
     },
     "catalog-feature-browse-products": {
-      "tags": ["domain:catalog", "type:feature"]
+      "tags": ["type:feature"]
     },
     "catalog-shell": {
       "tags": ["type:shell"]
@@ -69,7 +69,10 @@
       "tags": ["domain:shared", "type:ui"]
     },
     "shared-ui-select": {
-      "tags": []
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "shared-ui-common": {
+      "tags": ["type:ui"]
     }
   }
 }

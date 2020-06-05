@@ -24,7 +24,18 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   @Input()
   categoryList: ProductCategory[] = [];
 
-  times: Array<Date> = [];
+  @Input() set product(v: Product) {
+    this.form.setValue(
+      {
+        id: v.id,
+        name: v.name,
+        description: v.description,
+        price: v.price,
+        productCategoryId: v.productCategoryId,
+      },
+      { emitEvent: false }
+    )
+  }
 
   @Output()
   valueChange = new EventEmitter<Partial<Product>>();
@@ -32,24 +43,21 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   @Output()
   valueSubmitted = new EventEmitter<Product>();
 
+  times: Array<Date> = [];
 
   form = new FormGroup({
     id: new FormControl(),
     name: new FormControl('', [
       Validators.required
     ]),
-    description: new FormControl('', [
-      Validators.maxLength(1000)
-    ]),
+    description: new FormControl(),
     price: new FormControl('', [
       Validators.required,
       Validators.min(1),
       // Validators.pattern('[0-9|,?|.?]*')
     ]),
-    timestamp: new FormControl(new Date(), [
-      Validators.required
-    ]),
-    productCategoryId: new FormControl('')
+    productCategoryId: new FormControl(),
+    timestamp: new FormControl()
   });
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
@@ -77,7 +85,9 @@ export class ProductFormComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    this.valueSubmitted.emit(createProductObject(this.form.value));
+    if (this.form.valid) {
+      this.valueSubmitted.emit(createProductObject(this.form.value));
+    }
   }
 
   ngOnDestroy() {

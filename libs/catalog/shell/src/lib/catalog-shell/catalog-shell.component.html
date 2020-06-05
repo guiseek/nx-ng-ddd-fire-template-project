@@ -1,12 +1,18 @@
-<nav>
-  <auth-account></auth-account>
-</nav>
+<mat-toolbar color="primary">
+  <span>Catálogo Dekao</span>
 
-<p>catalog-shell works!</p>
+  <span class="spacer"></span>
+
+  <auth-account></auth-account>
+
+  <a routerLink="auth" mat-button>Login</a>
+</mat-toolbar>
+<!-- <nav>
+
+</nav> -->
+
 
 <catalog-manage-products></catalog-manage-products>
 
-<catalog-browse-products></catalog-browse-products>
-<!-- <dekao-catalog-shell></dekao-catalog-shell> -->
 
 <!-- <router-outlet></router-outlet> -->

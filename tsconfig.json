@@ -35,7 +35,8 @@
       "@dekao/shared/ui-currency": ["libs/shared/ui-currency/src/index.ts"],
       "@dekao/shared/util-testing": ["libs/shared/util-testing/src/index.ts"],
       "@dekao/shared/ui-datetime": ["libs/shared/ui-datetime/src/index.ts"],
-      "@dekao/shared/ui/select": ["libs/shared/ui/select/src/index.ts"]
+      "@dekao/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
+      "@dekao/shared/ui/common": ["libs/shared/ui/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

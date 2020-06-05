@@ -1,57 +1,18 @@
-<h1>catalog-manage-products</h1>
+<section role="contentinfo">
+  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="6px" fxLayoutAlign="space-between center">
 
-<catalog-product-form
-  (valueChange)="formChaged($event)"
-  (valueSubmitted)="formSubmitted($event)"
-></catalog-product-form>
+    <mat-card fxFlex>
+      <catalog-browse-products></catalog-browse-products>
+    </mat-card>
 
-<!-- <form fxLayout="column" [formGroup]="form" (ngSubmit)="onSubmit()">
-  <mat-form-field>
-    <mat-label>Produto</mat-label>
-    <input type="text" matInput formControlName="name">
-    <mat-error>Obrigatório</mat-error>
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Descrição</mat-label>
-    <textarea
-      matInput
-      cdkTextareaAutosize
-      #autosize="cdkTextareaAutosize"
-      [cdkAutosizeMinRows]="minRows"
-      [cdkAutosizeMaxRows]="maxRows"
-      formControlName="description"
+    <mat-card fxFlex.gt-md="400px">
+      <catalog-product-form
+
+        (valueChange)="formChaged($event)"
+        (valueSubmitted)="formSubmitted($event)"
       >
-    </textarea>
-    <mat-error>Máximo de 1000 caracteres</mat-error>
-  </mat-form-field>
+      </catalog-product-form>
+    </mat-card>
 
-  <dekao-form-currency formControlName="price">
-    <label>Valor</label>
-    <span>Inválido</span>
-  </dekao-form-currency>
-
-  <mat-form-field>
-    <mat-label>Preço</mat-label>
-    <input type="text" matInput dekaoCurrencyInput formControlName="id">
-    <mat-error></mat-error>
-  </mat-form-field>
-
-  <dekao-time-select formControlName="timestamp">
-    <dekao-time-option *ngFor="let time of times" [value]="time">
-      {{ time | date:'hh:mm a' }}
-    </dekao-time-option>
-  </dekao-time-select>
-
-  <button mat-button>Salvar</button>
-
-</form> -->
-
-<!-- <dekao-form-currency></dekao-form-currency> -->
-
-<table class="table">
-  <tr *ngFor="let productCategory of productCategoryList$ | async">
-    <td>{{productCategory.id}}</td>
-    <td>{{productCategory.name}}</td>
-    <td>{{productCategory.description}}</td>
-  </tr>
-</table>
+  </div>
+</section>
