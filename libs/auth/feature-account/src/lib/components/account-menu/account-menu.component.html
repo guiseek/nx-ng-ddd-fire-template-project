@@ -1,0 +1,16 @@
+<button type="button" mat-button [mat-menu-trigger-for]="menu" [matMenuTriggerData]="user">
+  {{ user?.email }}
+</button>
+
+<mat-menu #menu="matMenu" class="toolbar-menu">
+  <ng-template matMenuContent let-u="u">
+    <button mat-menu-item>
+      <mat-icon>account_circle</mat-icon>
+      <span>{{ u?.displayName }}</span>
+    </button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="signOut()">
+      Sair do app
+    </button>
+  </ng-template>
+</mat-menu>

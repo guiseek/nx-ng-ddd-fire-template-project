@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthUser } from '../entities/auth-user';
 import { Login } from '../entities/login';
-import { AccountUserDataService } from './account-user.data.service';
 
 export type AuthProvider = 'google' | 'github';
 const getProvider = (provider: AuthProvider) => {
@@ -20,12 +19,15 @@ export class AuthUserDataService {
   user$: Observable<AuthUser>;
 
   constructor(
-    private afa: AngularFireAuth,
-    private _accountUser: AccountUserDataService
+    private afa: AngularFireAuth
   ) {
     this.user$ = this.afa.authState.pipe(
       map(user => !!user ? user : null)
     );
+  }
+
+  user() {
+    return this.afa.currentUser;
   }
 
   login({ email, password }: Login) {

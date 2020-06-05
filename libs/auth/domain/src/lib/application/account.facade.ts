@@ -16,6 +16,8 @@ export class AccountFacade {
   accountUserSubject = new BehaviorSubject<AccountUser>(null);
   accountUser$ = this.accountUserSubject.asObservable();
 
+  user$ = this._authUser.user$;
+
   constructor(
     private _authUser: AuthUserDataService,
     private _accountUser: AccountUserDataService

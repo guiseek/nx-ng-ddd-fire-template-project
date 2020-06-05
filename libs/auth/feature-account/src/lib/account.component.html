@@ -1,8 +1,1 @@
-<code>{{(accountUser$ | async) | json}}</code>
-<!-- <table class="table">
-    <tr *ngFor="let accountUser of accountUserList$ | async">
-        <td>{{accountUser.id}}</td>
-        <td>{{accountUser.name}}</td>
-        <td>{{accountUser.description}}</td>
-    </tr>
-</table> -->
+<auth-account-menu [user]="user$ | async"></auth-account-menu>
