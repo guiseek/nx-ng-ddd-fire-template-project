@@ -1,11 +1,11 @@
 <h1>auth-login</h1>
 
-
-
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-card>
     <mat-card-title *ngIf="loginFacade.user$ | async as user">
       {{ user.displayName }}
+      <p>{{ user.emailVerified }}</p>
+      <pre>{{ user.toJSON() | json }}</pre>
     </mat-card-title>
     <mat-form-field>
       <mat-label>Email</mat-label>

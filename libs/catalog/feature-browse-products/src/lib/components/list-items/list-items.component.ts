@@ -1,11 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { Product } from '@seek/catalog/domain';
+import { TableCols } from '@seek/shared/domain';
 
-type TableExtraCols = 'menu' | 'actions';
-type TableCols<T> = Array<keyof T | TableExtraCols>;
 
 @Component({
   selector: 'catalog-list-items',
@@ -13,7 +12,7 @@ type TableCols<T> = Array<keyof T | TableExtraCols>;
   styleUrls: ['./list-items.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListItemsComponent implements OnInit {
+export class ListItemsComponent {
 
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -26,9 +25,10 @@ export class ListItemsComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  @Input() set filter(query: string) {
+    if (query) {
+      this.dataSource.filter = query
+        .toLowerCase().trim();
+    }
   }
-
 }

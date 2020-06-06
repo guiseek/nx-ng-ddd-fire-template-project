@@ -78,6 +78,28 @@
         "allow": [],
         "depConstraints": [
           {
+            "sourceTag": "domain:app",
+            "onlyDependOnLibsWithTags": [
+              "domain:catalog",
+              "domain:auth"
+            ]
+          },
+          {
+            "sourceTag": "type:app",
+            "onlyDependOnLibsWithTags": [
+              "type:feature"
+            ]
+          },
+          {
+            "sourceTag": "type:shell",
+            "onlyDependOnLibsWithTags": [
+              "type:ui",
+              "type:api",
+              "type:util",
+              "type:feature"
+            ]
+          },
+          {
             "sourceTag": "type:api",
             "onlyDependOnLibsWithTags": [
               "type:ui",
@@ -86,18 +108,10 @@
             ]
           },
           {
-            "sourceTag": "type:shell",
-            "onlyDependOnLibsWithTags": [
-              "type:ui",
-              "type:domain-logic",
-              "type:util",
-              "type:feature"
-            ]
-          },
-          {
             "sourceTag": "type:feature",
             "onlyDependOnLibsWithTags": [
               "type:ui",
+              "type:api",
               "type:domain-logic",
               "type:util"
             ]
@@ -131,7 +145,6 @@
           {
             "sourceTag": "domain:shared",
             "onlyDependOnLibsWithTags": [
-              "domain:shared",
               "domain:shared"
             ]
           },
@@ -139,7 +152,14 @@
             "sourceTag": "domain:catalog",
             "onlyDependOnLibsWithTags": [
               "domain:catalog",
+              "domain:auth/api",
               "domain:shared"
+            ]
+          },
+          {
+            "sourceTag": "type:util",
+            "onlyDependOnLibsWithTags": [
+              "type:util"
             ]
           }
         ]

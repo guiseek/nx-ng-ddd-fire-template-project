@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AuthUser } from '../entities/auth-user';
 import { Login } from '../entities/login';
@@ -58,23 +58,5 @@ export class AuthUserDataService {
 
   logout() {
     return this.afa.signOut();
-  }
-
-
-  load(): Observable<AuthUser[]> {
-
-    // Uncomment if needed
-    /*
-    const url = '...';
-    const params = new HttpParams().set('param', 'value');
-    const headers = new HttpHeaders().set('Accept', 'application/json');
-    return this.http.get<AuthUser[]>(url, {params, headers});
-    */
-
-    return of([
-      // { id: 1, name: 'Lorem ipsum', description: 'Lorem ipsum dolor sit amet' },
-      // { id: 2, name: 'At vero eos', description: 'At vero eos et accusam et justo duo dolores' },
-      // { id: 3, name: 'Duis autem', description: 'Duis autem vel eum iriure dolor in hendrerit' },
-    ] as any);
   }
 }

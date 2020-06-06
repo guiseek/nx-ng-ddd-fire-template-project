@@ -1,0 +1,21 @@
+.shell-nav-container {
+  height: 100%;
+}
+
+.shell-nav {
+  width: 200px;
+}
+.shell-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.shell-nav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}

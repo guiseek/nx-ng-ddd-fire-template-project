@@ -36,7 +36,12 @@
       "@seek/shared/util-testing": ["libs/shared/util-testing/src/index.ts"],
       "@seek/shared/ui-datetime": ["libs/shared/ui-datetime/src/index.ts"],
       "@seek/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
-      "@seek/shared/ui/common": ["libs/shared/ui/common/src/index.ts"]
+      "@seek/shared/ui/common": ["libs/shared/ui/common/src/index.ts"],
+      "@seek/auth/api": ["libs/auth/api/src/index.ts"],
+      "@seek/shared/util-auth": ["libs/shared/util-auth/src/index.ts"],
+      "@seek/shared/ui/address": ["libs/shared/ui/address/src/index.ts"],
+      "@seek/shared/ui/layout": ["libs/shared/ui/layout/src/index.ts"],
+      "@seek/catalog/api": ["libs/catalog/api/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
