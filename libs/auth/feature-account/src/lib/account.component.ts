@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountFacade } from '@dekao/auth/domain';
+import { AccountFacade } from '@seek/auth/domain';
 
 @Component({
   selector: 'auth-account',

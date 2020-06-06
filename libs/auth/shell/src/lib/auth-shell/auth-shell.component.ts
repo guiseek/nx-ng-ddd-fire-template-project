@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'dekao-auth-shell',
+  selector: 'seek-auth-shell',
   templateUrl: './auth-shell.component.html',
   styleUrls: ['./auth-shell.component.scss']
 })

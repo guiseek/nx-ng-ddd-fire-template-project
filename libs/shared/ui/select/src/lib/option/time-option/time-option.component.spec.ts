@@ -18,7 +18,7 @@ describe('TimeOptionComponent', () => {
   });
 
   beforeEach(() => {
-    template = `<dekao-time-option [time]="date"></dekao-time-option>`;
+    template = `<seek-time-option [time]="date"></seek-time-option>`;
   })
 
   it('should display the host component title', () => {

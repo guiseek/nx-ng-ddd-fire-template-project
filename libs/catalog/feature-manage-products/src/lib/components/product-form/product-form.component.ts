@@ -1,7 +1,7 @@
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Component, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Product, ProductCategory } from '@dekao/catalog/domain';
+import { Product, ProductCategory } from '@seek/catalog/domain';
 import { Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, take, takeUntil } from 'rxjs/operators';
 

@@ -6,7 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { AuthDomainModule } from '@dekao/auth/domain';
+import { AuthDomainModule } from '@seek/auth/domain';
 import { LoginComponent } from './login.component';
 import { SocialLoginDirective } from './social-login/social-login.directive';
 

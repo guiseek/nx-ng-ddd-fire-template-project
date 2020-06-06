@@ -5,7 +5,7 @@ import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
 
 @Directive({
-  selector: '[dekaoCurrencyInput]'
+  selector: '[seekCurrencyInput]'
 })
 export class CurrencyInputDirective implements OnInit, OnDestroy {
   @Input() public thousandToDecimalSeparatorEnabled = true;
@@ -23,7 +23,7 @@ export class CurrencyInputDirective implements OnInit, OnDestroy {
 		private hostElement: ElementRef<HTMLInputElement>,
 	) {
 		if (!hostElement.nativeElement.setSelectionRange) {
-			throw new Error("'dekaoCurrencyInput' can only be applied to input element");
+			throw new Error("'seekCurrencyInput' can only be applied to input element");
 		}
 	}
 

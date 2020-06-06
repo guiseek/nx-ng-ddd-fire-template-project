@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FirestoreDataService } from '@dekao/shared/domain';
+import { FirestoreDataService } from '@seek/shared/domain';
 import { config } from '@env/config';
 import { Observable, of } from 'rxjs';
 import { AccountUser } from '../entities/account-user';

@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { redirectLoggedInTo } from '@angular/fire/auth-guard';
 import { RouterModule } from '@angular/router';
-import { AuthFeatureLoginModule } from '@dekao/auth/feature-login';
+import { AuthFeatureLoginModule } from '@seek/auth/feature-login';
 import { AuthShellComponent } from './auth-shell/auth-shell.component';
 
 const redirectLoggedInToItems = () => redirectLoggedInTo(['/produtos']);

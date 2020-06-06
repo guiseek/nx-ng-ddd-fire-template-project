@@ -1,5 +1,5 @@
 {
-  "name": "@dekao/shared-ui-common",
+  "name": "@seek/shared-ui-common",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^9.1.0",

@@ -18,29 +18,29 @@
     <mat-error>Máximo de 1000 caracteres</mat-error>
   </mat-form-field>
 
-  <!-- <dekao-form-currency formControlName="price">
+  <!-- <seek-form-currency formControlName="price">
     <label>Valor</label>
     <span>Inválido</span>
-  </dekao-form-currency> -->
+  </seek-form-currency> -->
 
   <mat-form-field>
     <mat-label>Preço</mat-label>
-    <input type="text" matInput dekaoCurrencyInput formControlName="price">
+    <input type="text" matInput seekCurrencyInput formControlName="price">
     <mat-error></mat-error>
   </mat-form-field>
 
 
-  <dekao-select formControlName="timestamp">
+  <seek-select formControlName="timestamp">
     <!-- <mat-icon matPrefix>access_time</mat-icon> -->
-    <dekao-option *ngFor="let time of times" [value]="time">
-      <dekao-time-option [time]="time"></dekao-time-option>
-    </dekao-option>
-  </dekao-select>
-  <!-- <dekao-time-select formControlName="timestamp">
-    <dekao-time-option *ngFor="let time of times" [value]="time">
+    <seek-option *ngFor="let time of times" [value]="time">
+      <seek-time-option [time]="time"></seek-time-option>
+    </seek-option>
+  </seek-select>
+  <!-- <seek-time-select formControlName="timestamp">
+    <seek-time-option *ngFor="let time of times" [value]="time">
       {{ time | date:'hh:mm a' }}
-    </dekao-time-option>
-  </dekao-time-select> -->
+    </seek-time-option>
+  </seek-time-select> -->
 
   <button mat-button>Salvar</button>
 </form>

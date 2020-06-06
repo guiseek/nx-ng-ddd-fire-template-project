@@ -4,7 +4,7 @@ import { TimeOption } from './time-option/time-option';
 import { TimeOptionComponent } from './time-option/time-option.component';
 
 @Component({
-  selector: 'dekao-time-select',
+  selector: 'seek-time-select',
   templateUrl: './time-select.component.html',
   styleUrls: ['./time-select.component.scss'],
   providers: [

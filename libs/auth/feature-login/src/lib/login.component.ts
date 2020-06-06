@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginFacade } from '@dekao/auth/domain';
+import { LoginFacade } from '@seek/auth/domain';
 import { Subject } from 'rxjs';
 
 @Component({

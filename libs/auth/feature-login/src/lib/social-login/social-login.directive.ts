@@ -1,5 +1,5 @@
 import { Directive, HostListener, Input } from '@angular/core';
-import { AuthProvider, LoginFacade } from '@dekao/auth/domain';
+import { AuthProvider, LoginFacade } from '@seek/auth/domain';
 
 @Directive({
   selector: '[authSocialLogin],authSocialLogin,[auth-social-login]'

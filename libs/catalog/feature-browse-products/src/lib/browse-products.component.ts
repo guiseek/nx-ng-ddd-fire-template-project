@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BrowseProductsFacade } from '@dekao/catalog/domain';
+import { BrowseProductsFacade } from '@seek/catalog/domain';
 
 @Component({
   selector: 'catalog-browse-products',

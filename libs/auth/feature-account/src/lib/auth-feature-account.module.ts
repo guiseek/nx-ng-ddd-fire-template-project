@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { AuthDomainModule } from '@dekao/auth/domain';
-import { SharedUiCommonModule, SharedUiMaterialModule } from '@dekao/shared/ui/common';
+import { AuthDomainModule } from '@seek/auth/domain';
+import { SharedUiCommonModule, SharedUiMaterialModule } from '@seek/shared/ui/common';
 import { AccountComponent } from './account.component';
 import { AccountMenuComponent } from './components/account-menu/account-menu.component';
 

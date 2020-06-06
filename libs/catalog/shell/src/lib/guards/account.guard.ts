@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { AccountFacade } from '@dekao/auth/domain';
+import { AccountFacade } from '@seek/auth/domain';
 import { Observable } from 'rxjs';
 import { map, take, tap } from 'rxjs/operators';
 

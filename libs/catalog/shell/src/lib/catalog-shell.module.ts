@@ -4,10 +4,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { AuthDomainModule } from '@dekao/auth/domain';
-import { AuthFeatureAccountModule } from '@dekao/auth/feature-account';
-import { CatalogFeatureBrowseProductsModule } from '@dekao/catalog/feature-browse-products';
-import { CatalogFeatureManageProductsModule } from '@dekao/catalog/feature-manage-products';
+import { AuthDomainModule } from '@seek/auth/domain';
+import { AuthFeatureAccountModule } from '@seek/auth/feature-account';
+import { CatalogFeatureBrowseProductsModule } from '@seek/catalog/feature-browse-products';
+import { CatalogFeatureManageProductsModule } from '@seek/catalog/feature-manage-products';
 import { CatalogShellComponent } from './catalog-shell/catalog-shell.component';
 import { AccountGuard } from './guards/account.guard';
 

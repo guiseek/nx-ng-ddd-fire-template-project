@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'dekao-time-option',
+  selector: 'seek-time-option',
   template: `
     <span>
       {{ time | date:'hh:mm' }}

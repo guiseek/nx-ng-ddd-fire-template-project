@@ -6,7 +6,7 @@ import { Option } from './option/option';
 import { OptionComponent } from './option/option.component';
 
 @Component({
-  selector: 'dekao-select',
+  selector: 'seek-select',
   templateUrl: './select.component.html',
   styleUrls: ['./select.component.scss'],
   providers: [

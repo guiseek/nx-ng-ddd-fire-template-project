@@ -1,7 +1,7 @@
 import { Component, Input, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'dekao-option',
+  selector: 'seek-option',
   template: `
     <ng-template #label>
       <ng-content></ng-content>

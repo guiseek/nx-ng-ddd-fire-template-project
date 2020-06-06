@@ -25,7 +25,7 @@ describe('CurrencyInputDirective', () => {
 
   beforeEach(() => {
     currencyControl = new FormControl(0);
-    element = `<input type="text" dekaoCurrencyInput [formControl]="currencyControl">`;
+    element = `<input type="text" seekCurrencyInput [formControl]="currencyControl">`;
     spectator = createDirective(element, {
       hostProps: { currencyControl }
     });

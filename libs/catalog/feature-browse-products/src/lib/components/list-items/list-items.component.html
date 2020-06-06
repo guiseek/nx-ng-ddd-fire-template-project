@@ -18,7 +18,7 @@
 
   <ng-container matColumnDef="created">
     <mat-header-cell *matHeaderCellDef> Criação </mat-header-cell>
-    <mat-cell *matCellDef="let element"> {{element.created.toDate() | date}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{element.created.timestamp | json}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="menu">

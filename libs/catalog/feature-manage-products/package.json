@@ -1,5 +1,5 @@
 {
-  "name": "@dekao/catalog-feature-manage-products",
+  "name": "@seek/catalog-feature-manage-products",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^9.1.0",

@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'dekao-root',
+  selector: 'seek-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

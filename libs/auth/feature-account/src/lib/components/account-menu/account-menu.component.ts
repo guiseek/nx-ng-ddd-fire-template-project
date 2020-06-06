@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { AuthUser } from '@dekao/auth/domain';
+import { AuthUser } from '@seek/auth/domain';
 
 @Component({
   selector: 'auth-account-menu',

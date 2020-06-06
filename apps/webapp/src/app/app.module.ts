@@ -28,14 +28,14 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
       {
         path: 'auth',
         loadChildren: () =>
-          import('@dekao/auth/shell').then(
+          import('@seek/auth/shell').then(
             (module) => module.AuthShellModule
           ),
       },
       {
         path: '',
         loadChildren: () =>
-          import('@dekao/catalog/shell').then(
+          import('@seek/catalog/shell').then(
             (module) => module.CatalogShellModule
           ),
       },

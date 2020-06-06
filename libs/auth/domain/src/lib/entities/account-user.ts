@@ -1,4 +1,4 @@
-import { DocumentBase } from '@dekao/shared/domain';
+import { DocumentBase } from '@seek/shared/domain';
 
 export interface AccountUser extends DocumentBase  {
   id: string;

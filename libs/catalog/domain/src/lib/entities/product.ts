@@ -1,4 +1,4 @@
-import { DocumentBase, DocumentLogs } from '@dekao/shared/domain';
+import { DocumentBase, DocumentLogs } from '@seek/shared/domain';
 
 export interface Product extends DocumentBase, DocumentLogs {
   id: string;

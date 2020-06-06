@@ -10,7 +10,7 @@
       },
       "root": "apps/webapp",
       "sourceRoot": "apps/webapp/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -387,7 +387,7 @@
       "projectType": "library",
       "root": "libs/auth/shell",
       "sourceRoot": "libs/auth/shell/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -510,7 +510,7 @@
       "projectType": "library",
       "root": "libs/catalog/shell",
       "sourceRoot": "libs/catalog/shell/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -589,7 +589,7 @@
       "projectType": "library",
       "root": "libs/shared/ui-currency",
       "sourceRoot": "libs/shared/ui-currency/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -659,7 +659,7 @@
       "projectType": "library",
       "root": "libs/shared/ui-datetime",
       "sourceRoot": "libs/shared/ui-datetime/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
@@ -691,7 +691,7 @@
       "projectType": "library",
       "root": "libs/shared/ui/select",
       "sourceRoot": "libs/shared/ui/select/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",
@@ -735,7 +735,7 @@
       "projectType": "library",
       "root": "libs/shared/ui/common",
       "sourceRoot": "libs/shared/ui/common/src",
-      "prefix": "dekao",
+      "prefix": "seek",
       "architect": {
         "build": {
           "builder": "@nrwl/angular:package",

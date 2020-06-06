@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit, ViewChild } from '@a
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Product } from '@dekao/catalog/domain';
+import { Product } from '@seek/catalog/domain';
 
 type TableExtraCols = 'menu' | 'actions';
 type TableCols<T> = Array<keyof T | TableExtraCols>;

@@ -13,7 +13,7 @@ const formCurrencyFieldProvider = {
 }
 
 @Component({
-  selector: 'dekao-form-currency',
+  selector: 'seek-form-currency',
   templateUrl: './form-currency.field.html',
   styleUrls: ['./form-currency.field.scss'],
   providers: [formCurrencyFieldProvider]

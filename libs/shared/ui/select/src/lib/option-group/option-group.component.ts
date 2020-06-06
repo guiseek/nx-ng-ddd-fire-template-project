@@ -2,7 +2,7 @@ import { Component, ContentChildren, Input, QueryList } from '@angular/core';
 import { OptionComponent } from './../option/option.component';
 
 @Component({
-  selector: 'dekao-option-group',
+  selector: 'seek-option-group',
   templateUrl: './option-group.component.html',
   styleUrls: ['./option-group.component.scss']
 })

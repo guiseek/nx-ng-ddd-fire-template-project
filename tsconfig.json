@@ -18,25 +18,25 @@
     "paths": {
       "@env": ["environments/environment.ts"],
       "@env/*": ["environments/*"],
-      "@dekao/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@dekao/auth/domain": ["libs/auth/domain/src/index.ts"],
-      "@dekao/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
-      "@dekao/auth/feature-account": ["libs/auth/feature-account/src/index.ts"],
-      "@dekao/shared/domain": ["libs/shared/domain/src/index.ts"],
-      "@dekao/auth/shell": ["libs/auth/shell/src/index.ts"],
-      "@dekao/catalog/domain": ["libs/catalog/domain/src/index.ts"],
-      "@dekao/catalog/feature-browse-products": [
+      "@seek/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@seek/auth/domain": ["libs/auth/domain/src/index.ts"],
+      "@seek/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
+      "@seek/auth/feature-account": ["libs/auth/feature-account/src/index.ts"],
+      "@seek/shared/domain": ["libs/shared/domain/src/index.ts"],
+      "@seek/auth/shell": ["libs/auth/shell/src/index.ts"],
+      "@seek/catalog/domain": ["libs/catalog/domain/src/index.ts"],
+      "@seek/catalog/feature-browse-products": [
         "libs/catalog/feature-browse-products/src/index.ts"
       ],
-      "@dekao/catalog/shell": ["libs/catalog/shell/src/index.ts"],
-      "@dekao/catalog/feature-manage-products": [
+      "@seek/catalog/shell": ["libs/catalog/shell/src/index.ts"],
+      "@seek/catalog/feature-manage-products": [
         "libs/catalog/feature-manage-products/src/index.ts"
       ],
-      "@dekao/shared/ui-currency": ["libs/shared/ui-currency/src/index.ts"],
-      "@dekao/shared/util-testing": ["libs/shared/util-testing/src/index.ts"],
-      "@dekao/shared/ui-datetime": ["libs/shared/ui-datetime/src/index.ts"],
-      "@dekao/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
-      "@dekao/shared/ui/common": ["libs/shared/ui/common/src/index.ts"]
+      "@seek/shared/ui-currency": ["libs/shared/ui-currency/src/index.ts"],
+      "@seek/shared/util-testing": ["libs/shared/util-testing/src/index.ts"],
+      "@seek/shared/ui-datetime": ["libs/shared/ui-datetime/src/index.ts"],
+      "@seek/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
+      "@seek/shared/ui/common": ["libs/shared/ui/common/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
