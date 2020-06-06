@@ -65,9 +65,6 @@
     "shared-util-testing": {
       "tags": []
     },
-    "shared-ui-datetime": {
-      "tags": ["domain:shared", "type:ui"]
-    },
     "shared-ui-select": {
       "tags": ["domain:shared", "type:ui"]
     },
@@ -88,6 +85,12 @@
     },
     "catalog-api": {
       "tags": ["type:api", "domain:catalog/api", "domain:catalog"]
+    },
+    "shared-ui-date-time": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "shared-util-catalog": {
+      "tags": ["type:util", "domain:catalog"]
     }
   }
 }

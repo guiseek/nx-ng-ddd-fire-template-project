@@ -1,14 +1,38 @@
-# Dekao
+# *\`Seek `Lab`\`*
+###  Estudo prático. Monorepo (nrwl nx), DDD, Code Organisation, Clean Architecture.
+
+## Node `v10.17`
 
 ```sh
-# Node 10.17
-ng add @angular/fire
 ng add @angular/material
+```
 
-# Firebase
-npm i @angular/fire firebase
 
+```sh
+ng add @angular/fire
+```
+
+> *Disclaimer*
+> -
+> Foi lançada a release `major` *6.0.0*, com isso algumas  mudanças significativas.
+> &nbsp;
+>  *Caso o schematics ng-add não instale o firebase, execute manualmente*
+>   ```
+>   npm i @angular/fire firebase
+>   ```
+>   Caso já use firebase e traga código de outro projeto, verifique seus
+>   métodos usados na autênticação e gerenciamento de usuários.
+>
+> Mais informações: https://github.com/angular/angularfire/releases/tag/6.0.0
+> &nbsp;
+
+
+```sh
 npm i @angular/flex-layout
+
+# Tests
+npm i @ngneat/spectator --save-dev
+
 
 ng add @angular-architects/ddd
 
@@ -29,16 +53,26 @@ ng generate @nrwl/angular:library --name=api --style=scss --directory=auth --pre
 ng g s services/auth --project auth-api
 ng generate @schematics/angular:guard --name=guards/auth --project=auth-api --implements=CanActivate --no-interactive --d
 
-ng generate @nrwl/angular:library --name=util-auth --style=scss --directory=shared --prefix=auth --tags=type:util,domain:shared --no-interactive
-
-
 ```
 
-# Auth shell
+ # Auth shell
 ```
 ng generate @nrwl/angular:library --name=shell --style=scss --directory=auth --lazy --parentModule=apps/webapp/src/app/app.module.ts --routing
 ng generate @schematics/angular:component --name=auth-shell --project=auth-shell --style=scss --displayBlock
 ```
+
+
+# Auth shell
+```
+ng generate @nrwl/angular:library --name=util-auth --style=scss --directory=shared --prefix=auth --tags=type:util,domain:shared --no-interactive
+ng g c components/credential-form --project shared-util-auth --export
+
+ng g c components/profile-form --project shared-util-auth --export -d
+```
+
+
+---
+
 
 # Catalog
 ```
@@ -55,7 +89,11 @@ ng generate @schematics/angular:component --name=product-form --project=manage-p
 
 ng generate @nrwl/angular:library --name=api --style=scss --directory=catalog --prefix=catalog --tags=type:api,domain:catalog/api,domain:catalog
 
+```
 
+## Catalog Util
+```sh
+ng generate @nrwl/angular:library --name=util-catalog --style=scss --directory=shared --prefix=catalog --publishable --tags=type:util,domain:catalog --no-interactive
 ```
 
 
@@ -85,7 +123,6 @@ ng generate @ngneat/spectator:spectator-component --name=components/account-menu
 > ```
 
 ```sh
-npm i @ngneat/spectator --save-dev
 
 ng generate @ngneat/spectator:spectator-component --name=components/search --project=catalog-feature-browse-products --style=scss --changeDetection=OnPush --export --withHost --no-interactive
 
@@ -122,7 +159,7 @@ ng generate @ngneat/spectator:spectator-component --name=option --project=shared
 ng generate @ngneat/spectator:spectator-component --name=option/time-option --project=shared-ui-select --style=scss --export --withCustomHost
 ```
 
-# Ui Address
+## Ui Address
 ```sh
 ng generate @nrwl/angular:library --name=address --style=scss --directory=shared/ui --tags=domain:shared,type:ui --no-interactive
 
@@ -130,10 +167,18 @@ ng generate @angular/material:addressForm --name=address-form --project=shared-u
 
 
 ```
-
+## Ui Date Time
 ```
 ng generate @ngneat/spectator:spectator-component --name=time-select --project=shared-ui-datetime --style=scss --export --withHost
 ng generate @ngneat/spectator:spectator-component --name=time-select/time-option --project=shared-ui-datetime --style=scss --export --withCustomHost
+```
+### Ui Date Time / Nove
+```sh
+ng g @nrwl/angular:move --project shared-ui-datetime --destination shared/ui/date-time
+```
+
+```sh
+ng generate @ngneat/spectator:spectator-component --name=date-picker --project=shared-ui-date-time --style=scss --export --withHost --no-interactive
 ```
 
 This project was generated using [Nx](https://nx.dev).

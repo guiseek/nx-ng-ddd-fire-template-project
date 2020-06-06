@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { TimeOptionComponent } from './time-select/time-option/time-option.component';
 import { TimeSelectComponent } from './time-select/time-select.component';
+import { DatePickerComponent } from './date-picker/date-picker.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { TimeSelectComponent } from './time-select/time-select.component';
     MatNativeDateModule,
     ReactiveFormsModule,
   ],
-  declarations: [TimeSelectComponent, TimeOptionComponent],
-  exports: [TimeSelectComponent, TimeOptionComponent],
+  declarations: [TimeSelectComponent, TimeOptionComponent, DatePickerComponent],
+  exports: [TimeSelectComponent, TimeOptionComponent, DatePickerComponent],
 })
-export class SharedUiDatetimeModule {}
+export class SharedUiDateTimeModule {}

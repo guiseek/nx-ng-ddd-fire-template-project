@@ -10,6 +10,7 @@
 <mat-divider></mat-divider>
 
 <catalog-list-items
+  [columns]="['name', 'price', 'description']"
   [items]="productList$ | async"
   [filter]="search$ | async"
   (rowClicked)="exec($event)"

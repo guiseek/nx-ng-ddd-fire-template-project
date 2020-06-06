@@ -6,20 +6,16 @@
   fxLayout.lt-md="column"
 >
     <mat-card fxFlex class="table" role="listbox">
-      <seek-card-list>
 
-      </seek-card-list>
+      <catalog-browse-products></catalog-browse-products>
 
-      <!-- <catalog-browse-products></catalog-browse-products> -->
     </mat-card>
 
     <mat-card fxFlex.gt-md="400px">
       <catalog-product-form
-
         (valueChange)="formChaged($event)"
         (valueSubmitted)="formSubmitted($event)"
-      >
-      </catalog-product-form>
+      ></catalog-product-form>
     </mat-card>
 
 </section>

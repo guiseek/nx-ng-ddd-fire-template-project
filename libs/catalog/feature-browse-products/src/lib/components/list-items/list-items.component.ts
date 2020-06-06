@@ -13,17 +13,23 @@ import { TableCols } from '@seek/shared/domain';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListItemsComponent {
-
   @Output()
   rowClicked = new EventEmitter<{
     product: Product,
     useCase: string
   }>();
 
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort)
+  sort: MatSort;
+
+  @ViewChild(MatPaginator)
+  paginator: MatPaginator;
+
   dataSource: MatTableDataSource<Product>;
-  columns: TableCols<Product> = ['id', 'name', 'price', 'description', 'created'];
+
+  @Input() columns: TableCols<Product> = [
+    'id', 'name', 'price', 'description'
+  ];
 
   @Input() set items(values: Product[]) {
     this.dataSource = new MatTableDataSource(values);
