@@ -107,7 +107,7 @@ ng generate @ngneat/spectator:spectator-component --name=nav-list --project=shar
 
 ng generate @ngneat/spectator:spectator-component --name=portal-window --project=shared-ui-layout --style=scss --export --inlineTemplate --withCustomHost
 
-
+ng generate @ngneat/spectator:spectator-component --name=card-list --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
 ```
 
 

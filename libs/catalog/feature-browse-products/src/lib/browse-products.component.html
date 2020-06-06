@@ -12,5 +12,6 @@
 <catalog-list-items
   [items]="productList$ | async"
   [filter]="search$ | async"
+  (rowClicked)="exec($event)"
 ></catalog-list-items>
 

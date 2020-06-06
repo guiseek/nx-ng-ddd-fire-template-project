@@ -20,4 +20,4 @@ import { SearchComponent } from './components/search/search.component';
   declarations: [BrowseProductsComponent, SearchComponent, ListItemsComponent],
   exports: [BrowseProductsComponent, SearchComponent, ListItemsComponent],
 })
-export class CatalogFeatureBrowseProductsModule {}
+export class CatalogFeatureBrowseProductsModule { }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { FirestoreDataService } from '@seek/shared/domain';
 import { config } from '@env/config';
+import { FirestoreDataService } from '@seek/shared/domain';
 import { Observable } from 'rxjs';
 import { Product } from '../entities/product';
 
@@ -18,6 +18,7 @@ export class ProductDataService extends FirestoreDataService<Product> {
   }
 
   load(): Observable<Product[]> {
-    return this.query(this.path).valueChanges();
+    return this.query(this.path)
+      .valueChanges({ idField: 'id' });
   }
 }
