@@ -22,7 +22,7 @@ import { CatalogShellComponent } from './catalog-shell/catalog-shell.component';
     CatalogFeatureManageProductsModule,
     CatalogFeatureBrowseProductsModule,
     SharedUiLayoutModule.forRoot([
-      { path: '/catalog/add', label: 'Criar', roles: [] }
+      { path: '/catalog/add', label: 'Criar', icon: 'add', roles: [] }
     ]),
     RouterModule.forChild([
       {

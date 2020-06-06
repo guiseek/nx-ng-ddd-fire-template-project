@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { BrowseProductsFacade } from '@seek/catalog/domain';
 import { Subject } from 'rxjs';
 
@@ -14,11 +15,16 @@ export class BrowseProductsComponent implements OnInit {
   search$ = new Subject<string>();
 
   constructor(
+    private router: Router,
     private facade: BrowseProductsFacade
   ) { }
 
   onSearch(query = '') {
     this.search$.next(query);
+  }
+
+  exec(value) {
+    console.log(value);
   }
 
   ngOnInit() {

@@ -72,7 +72,7 @@
       "tags": ["domain:shared", "type:ui"]
     },
     "shared-ui-common": {
-      "tags": ["type:ui"]
+      "tags": ["type:ui", "domain:shared"]
     },
     "auth-api": {
       "tags": ["type:api", "domain:auth/api", "domain:auth"]
