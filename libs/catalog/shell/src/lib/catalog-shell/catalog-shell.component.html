@@ -1,18 +1,13 @@
-<mat-toolbar color="primary">
-  <span>Catálogo Dekao</span>
+<seek-nav-shell subtitle="Catálogo">
 
-  <span class="spacer"></span>
+  <header>
+    <a routerLink="auth" mat-button>Login</a>
 
-  <auth-account></auth-account>
+    <auth-account></auth-account>
+  </header>
 
-  <a routerLink="auth" mat-button>Login</a>
-</mat-toolbar>
-<!-- <nav>
+  <main class="main-container" role="main">
+    <catalog-manage-products></catalog-manage-products>
+  </main>
 
-</nav> -->
-
-
-<catalog-manage-products></catalog-manage-products>
-
-
-<!-- <router-outlet></router-outlet> -->
+</seek-nav-shell>

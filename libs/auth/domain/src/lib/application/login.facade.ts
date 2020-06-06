@@ -27,17 +27,6 @@ export class LoginFacade {
     return this.authUserDataService.social(provider);
   }
 
-  load(): void {
-    this.authUserDataService.load().subscribe(
-      authUserList => {
-        this.authUserListSubject.next(authUserList)
-      },
-      err => {
-        console.error('err', err);
-      }
-    );
-  }
-
   logout() {
     this.authUserDataService.logout();
   }

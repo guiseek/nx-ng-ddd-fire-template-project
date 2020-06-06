@@ -1,11 +1,16 @@
-<h1>catalog-browse-products</h1>
+<mat-card-header class="searchable">
+  <mat-card-title>Produtos</mat-card-title>
 
-<catalog-list-items [items]="productList$ | async"></catalog-list-items>
+  <catalog-search
+    (queryChange)="onSearch($event)"
+  ></catalog-search>
 
-<!-- <table class="table">
-  <tr *ngFor="let product of productList$ | async">
-    <td>{{product.id}}</td>
-    <td>{{product.name}}</td>
-    <td>{{product.description}}</td>
-  </tr>
-</table> -->
+</mat-card-header>
+
+<mat-divider></mat-divider>
+
+<catalog-list-items
+  [items]="productList$ | async"
+  [filter]="search$ | async"
+></catalog-list-items>
+

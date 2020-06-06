@@ -1,7 +1,11 @@
-<section role="contentinfo">
-  <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="6px" fxLayoutAlign="space-between center">
-
-    <mat-card fxFlex>
+<section
+  role="list"
+  fxFlex
+  fxLayout="row"
+  fxLayoutGap="6px"
+  fxLayout.lt-md="column"
+>
+    <mat-card fxFlex class="table" role="listbox">
       <catalog-browse-products></catalog-browse-products>
     </mat-card>
 
@@ -14,5 +18,4 @@
       </catalog-product-form>
     </mat-card>
 
-  </div>
 </section>

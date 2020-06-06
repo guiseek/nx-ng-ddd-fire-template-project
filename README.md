@@ -20,14 +20,18 @@ cp apps/webapp/src/environments .
 # Auth
 ```
 ng g @angular-architects/ddd:domain auth
-ng g @angular-architects/ddd:feature login --domain auth --app webapp --entity auth-user
-ng g @angular-architects/ddd:feature account --domain auth --app webapp --entity account-user
-```
 
-# Shared domain
-```
-ng g @angular-architects/ddd:domain shared
-ng g s services/firestore --project shared-domain
+ng g @angular-architects/ddd:feature login --domain auth --app webapp --entity auth-user
+
+ng g @angular-architects/ddd:feature account --domain auth --app webapp --entity account-user
+
+ng generate @nrwl/angular:library --name=api --style=scss --directory=auth --prefix=auth --tags=type:api,domain:auth/api,domain:auth
+ng g s services/auth --project auth-api
+ng generate @schematics/angular:guard --name=guards/auth --project=auth-api --implements=CanActivate --no-interactive --d
+
+ng generate @nrwl/angular:library --name=util-auth --style=scss --directory=shared --prefix=auth --tags=type:util,domain:shared --no-interactive
+
+
 ```
 
 # Auth shell
@@ -41,11 +45,17 @@ ng generate @schematics/angular:component --name=auth-shell --project=auth-shell
 ng g @angular-architects/ddd:domain catalog
 ng g @angular-architects/ddd:feature browse-products --domain catalog --app webapp --entity product
 ng generate @nrwl/angular:library --name=shell --style=scss --directory=catalog --lazy --parentModule=apps/webapp/src/app/app.module.ts --routing
+ng generate @nrwl/angular:library --name=api --style=scss --directory=catalog --prefix=catalog --tags=type:api,domain:catalog/api,domain:catalog
+
 ng generate @schematics/angular:component --name=catalog-shell --project=catalog-shell --style=scss --displayBlock
 
 ng g @angular-architects/ddd:feature manage-products --domain catalog --entity product-category
 
 ng generate @schematics/angular:component --name=product-form --project=manage-products --style=scss --export--no-interactive
+
+ng generate @nrwl/angular:library --name=api --style=scss --directory=catalog --prefix=catalog --tags=type:api,domain:catalog/api,domain:catalog
+
+
 ```
 
 
@@ -59,15 +69,20 @@ ng generate @ngneat/spectator:spectator-component --name=components/account-menu
 
 ---
 
-```sh
-ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
 
-ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
+# Shared
+- ## Ui (*User Interface*)
 
-ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
-
-npm i ngx-currency
-```
+> ## Ui
+> ```sh
+> ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
+>
+> ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
+>
+> ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
+>
+> npm i ngx-currency
+> ```
 
 ```sh
 npm i @ngneat/spectator --save-dev
@@ -79,7 +94,20 @@ ng generate @ngneat/spectator:spectator-component --name=components/list-items -
 
 # Ui Common
 ```sh
-ng generate @nrwl/angular:library --name=common --directory=shared/ui --tags=type:ui
+ng generate @nrwl/angular:library --name=common --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive
+```
+
+# Ui Layout
+```sh
+ng generate @nrwl/angular:library --name=layout --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive
+
+ng generate @angular/material:navigation --name=nav-shell --project=shared-ui-layout --style=scss --changeDetection=OnPush --skipImport --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=nav-list --project=shared-ui-layout --style=scss --export --withHost
+
+ng generate @ngneat/spectator:spectator-component --name=portal-window --project=shared-ui-layout --style=scss --export --inlineTemplate --withCustomHost
+
+
 ```
 
 
@@ -92,6 +120,15 @@ ng generate @ngneat/spectator:spectator-component --name=select --project=shared
 ng generate @ngneat/spectator:spectator-component --name=option-group --project=shared-ui-select --style=scss --export --withCustomHost
 ng generate @ngneat/spectator:spectator-component --name=option --project=shared-ui-select --style=scss --export --withCustomHost
 ng generate @ngneat/spectator:spectator-component --name=option/time-option --project=shared-ui-select --style=scss --export --withCustomHost
+```
+
+# Ui Address
+```sh
+ng generate @nrwl/angular:library --name=address --style=scss --directory=shared/ui --tags=domain:shared,type:ui --no-interactive
+
+ng generate @angular/material:addressForm --name=address-form --project=shared-ui-address --style=scss --export --skipImport --no-interactive
+
+
 ```
 
 ```

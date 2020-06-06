@@ -4,28 +4,31 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
-import { AuthDomainModule } from '@seek/auth/domain';
+import { AuthApiModule, AuthGuard } from '@seek/auth/api';
 import { AuthFeatureAccountModule } from '@seek/auth/feature-account';
 import { CatalogFeatureBrowseProductsModule } from '@seek/catalog/feature-browse-products';
 import { CatalogFeatureManageProductsModule } from '@seek/catalog/feature-manage-products';
+import { SharedUiLayoutModule } from '@seek/shared/ui/layout';
 import { CatalogShellComponent } from './catalog-shell/catalog-shell.component';
-import { AccountGuard } from './guards/account.guard';
 
 @NgModule({
   imports: [
     CommonModule,
+    AuthApiModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    AuthDomainModule,
     AuthFeatureAccountModule,
     CatalogFeatureManageProductsModule,
     CatalogFeatureBrowseProductsModule,
+    SharedUiLayoutModule.forRoot([
+      { path: '/catalog/add', label: 'Criar', roles: [] }
+    ]),
     RouterModule.forChild([
       {
         path: '',
         component: CatalogShellComponent,
-        canActivate: [AccountGuard]
+        canActivate: [AuthGuard]
       }
     ]),
   ],

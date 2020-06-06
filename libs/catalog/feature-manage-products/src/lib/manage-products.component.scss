@@ -1,8 +1,9 @@
-:host form {
-  display: flex;
+:host {
+  display: block;
+  height: 100%;
+  form {
+    display: flex;
+  }
 }
 
-.table td {
-  border: 1px solid;
-  padding: 10px;
-}
+.mat-card {}
