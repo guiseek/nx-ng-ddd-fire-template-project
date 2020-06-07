@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     CommonModule,
     FlexLayoutModule,
-    ReactiveFormsModule,
-  ],
+    ReactiveFormsModule
+  ]
 })
 export class SharedUiCommonModule {}

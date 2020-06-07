@@ -42,7 +42,8 @@
       "@seek/shared/ui/layout": ["libs/shared/ui/layout/src/index.ts"],
       "@seek/catalog/api": ["libs/catalog/api/src/index.ts"],
       "@seek/shared/ui/date-time": ["libs/shared/ui/date-time/src/index.ts"],
-      "@seek/shared/util-catalog": ["libs/shared/util-catalog/src/index.ts"]
+      "@seek/shared/util-catalog": ["libs/shared/util-catalog/src/index.ts"],
+      "@seek/shared/ui/photo": ["libs/shared/ui/photo/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,47 @@
+@import '~@angular/material/theming';
+
+:host {
+  display: block;
+  position: relative;
+  border-radius: 50%;
+  @include mat-elevation-transition;
+  @include mat-elevation(2);
+
+  &:hover {
+    @include mat-elevation(8);
+  }
+
+  > .small {
+    width: 56px;
+    height: 56px;
+  }
+  > .medium {
+    width: 96px;
+    height: 96px;
+  }
+  > .large {
+    width: 128px;
+    height: 128px;
+  }
+}
+
+// -webkit-font-smoothing: antialiased;
+// color: #333;
+// letter-spacing: 0;
+// text-align: center;
+// cursor: -webkit-grab;
+// padding: 0;
+// border: 0;
+// font-size: 100%;
+// font: inherit;
+// vertical-align: baseline;
+// font-family: "Lato",Arial,Tahoma,sans-serif!important;
+// box-sizing: border-box;
+// display: block;
+// max-width: 100%;
+// outline: transparent solid 1px;
+// border-radius: 50%!important;
+// width: 233px!important;
+// height: 233px!important;
+// margin: 0 auto;
+// position: relative !Important;

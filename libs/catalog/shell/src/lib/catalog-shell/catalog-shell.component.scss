@@ -7,3 +7,29 @@
     flex: 1;
   }
 }
+
+.mat-card.profile {
+  .photo {
+    position: relative;
+    &:before {
+      display: block;
+      content: "";
+      width: 100%;
+      padding-top: (9 / 16) * 100%;
+    }
+    > img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+// .mat-card.profile {
+//   max-width: 200px;
+
+//   .mat-card-image {
+//     object-fit: cover;
+//   }
+// }

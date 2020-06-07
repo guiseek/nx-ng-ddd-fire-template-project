@@ -91,6 +91,9 @@
     },
     "shared-util-catalog": {
       "tags": ["type:util", "domain:catalog"]
+    },
+    "shared-ui-photo": {
+      "tags": ["type:ui", "domain:shared"]
     }
   }
 }

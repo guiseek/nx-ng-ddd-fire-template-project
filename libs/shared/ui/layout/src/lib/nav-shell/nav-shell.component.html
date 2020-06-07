@@ -1,9 +1,13 @@
 <mat-sidenav-container class="shell-nav-container">
-  <mat-sidenav #drawer class="shell-nav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+  <mat-sidenav
+    #drawer class="shell-nav"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+
+    <ng-content select="mat-card"></ng-content>
+
+    <ng-content select="nav"></ng-content>
 
     <seek-nav-list></seek-nav-list>
 
@@ -17,10 +21,10 @@
     <mat-toolbar color="primary">
       <button
         type="button"
-        aria-label="Toggle sidenav"
         mat-icon-button
+        aria-label="Alternar menu"
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+      >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>{{ subtitle }}</span>
@@ -37,3 +41,18 @@
 
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+
+<!--
+  fixedInViewport
+
+
+  <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+ -->

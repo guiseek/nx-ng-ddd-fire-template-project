@@ -990,6 +990,50 @@
           "style": "scss"
         }
       }
+    },
+    "shared-ui-photo": {
+      "projectType": "library",
+      "root": "libs/shared/ui/photo",
+      "sourceRoot": "libs/shared/ui/photo/src",
+      "prefix": "seek",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/shared/ui/photo/tsconfig.lib.json",
+            "project": "libs/shared/ui/photo/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/ui/photo/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/ui/photo/tsconfig.lib.json",
+              "libs/shared/ui/photo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/ui/photo/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/shared/ui/photo/jest.config.js",
+            "tsConfig": "libs/shared/ui/photo/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/shared/ui/photo/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

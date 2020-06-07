@@ -8,6 +8,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { CardListComponent } from './card-list/card-list.component';
@@ -16,7 +17,10 @@ import { ListComponent } from './card-list/list/list.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { NavShell, NAV_SHELL, NAV_SHELL_CONFIG } from './nav-shell/nav-shell-injectors';
 import { NavShellComponent } from './nav-shell/nav-shell.component';
+import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
+import { TabComponent } from './nav-tabs/tab/tab.component';
 import { PortalWindowComponent } from './portal-window/portal-window.component';
+import { TabContentDirective } from './nav-tabs/tab/tab-content.directive';
 
 const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
 
@@ -28,6 +32,7 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     LayoutModule,
     MatIconModule,
     MatListModule,
+    MatTabsModule,
     DragDropModule,
     MatButtonModule,
     MatSidenavModule,
@@ -40,7 +45,10 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     NavListComponent,
     CardListComponent,
     CardsComponent,
-    ListComponent
+    ListComponent,
+    NavTabsComponent,
+    TabComponent,
+    TabContentDirective
   ],
   exports: [
     NavShellComponent,
@@ -48,7 +56,10 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     NavListComponent,
     CardListComponent,
     CardsComponent,
-    ListComponent
+    ListComponent,
+    NavTabsComponent,
+    TabComponent,
+    TabContentDirective
   ]
 })
 export class SharedUiLayoutModule {

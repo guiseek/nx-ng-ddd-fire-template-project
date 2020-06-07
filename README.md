@@ -145,6 +145,13 @@ ng generate @ngneat/spectator:spectator-component --name=nav-list --project=shar
 ng generate @ngneat/spectator:spectator-component --name=portal-window --project=shared-ui-layout --style=scss --export --inlineTemplate --withCustomHost
 
 ng generate @ngneat/spectator:spectator-component --name=card-list --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=nav-tabs --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=nav-tabs/tab --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-directive --name=nav-tabs/tab/tab-content --project=shared-ui-layout --export
+
 ```
 
 
@@ -172,7 +179,8 @@ ng generate @angular/material:addressForm --name=address-form --project=shared-u
 ng generate @ngneat/spectator:spectator-component --name=time-select --project=shared-ui-datetime --style=scss --export --withHost
 ng generate @ngneat/spectator:spectator-component --name=time-select/time-option --project=shared-ui-datetime --style=scss --export --withCustomHost
 ```
-### Ui Date Time / Nove
+
+## Ui Date Time / Nove
 ```sh
 ng g @nrwl/angular:move --project shared-ui-datetime --destination shared/ui/date-time
 ```
@@ -180,6 +188,86 @@ ng g @nrwl/angular:move --project shared-ui-datetime --destination shared/ui/dat
 ```sh
 ng generate @ngneat/spectator:spectator-component --name=date-picker --project=shared-ui-date-time --style=scss --export --withHost --no-interactive
 ```
+
+## Ui Photo
+```sh
+ng generate @nrwl/angular:library --name=photo --style=scss --directory=shared/ui --publishable --tags=type:ui,domain:shared --no-interactive
+
+ng g c avatar --project shared-ui-photo --export
+ng g c crop-photo --project shared-ui-photo --export
+ng g c drop-photo --project shared-ui-photo --export
+
+
+import { Observable } from 'rxjs';
+
+export interface ImageFileCompressed {
+  file: File
+  data: string
+}
+
+export function handleImageSize(file: File, width = 600): Observable<ImageFileCompressed> {
+  const reader = new FileReader();
+  reader.readAsDataURL(file);
+  return new Observable(observer => {
+    reader.onload = ev => {
+      const img = new Image();
+      img.src = (ev.target as any).result;
+      (img.onload = () => {
+        const elem = document.createElement('canvas'); // Use Angular's Renderer2 method
+        const scaleFactor = width / img.width;
+        elem.width = width;
+        elem.height = img.height * scaleFactor;
+        const ctx = <CanvasRenderingContext2D>elem.getContext('2d');
+        ctx.drawImage(img, 0, 0, width, img.height * scaleFactor);
+        ctx.canvas.toBlob(
+          blob => {
+            observer.next(
+              {
+                file: new File([blob], file.name, {
+                  type: 'image/jpeg',
+                  lastModified: Date.now(),
+                }),
+                data: ctx.canvas.toDataURL()
+              }
+            );
+          },
+          'image/jpeg',
+          1,
+        );
+      }),
+        (reader.onerror = error => observer.error(error));
+    };
+  });
+}
+```
+
+---
+
+# Patterns
+
+### Categories for Libraries
+In their free e-book about Monorepo Patterns, Nrwl – the company behind Nx – use the following categories for libraries:
+
+- `feature`: Implements a use case with smart components
+- `data-access`: Implements data accesses, e.g. via HTTP or WebSockets
+- `ui`: Provides use case-agnostic and thus reusable components (dumb components)
+- `util`: Provides helper functions
+
+> ***Please*** note the separation between smart and dumb components.
+
+Smart components within feature libraries are use case-specific. An example is a component which enables a product search.
+
+On the contrary, dumb components do not know the current use case. They receive data via inputs, display it in a specific way, and issue events. Such presentational components “just” help to implement use cases and hence they are reusable. An example is a date-time picker, which is unaware of which use case it supports. Hence, it is available within all use cases dealing with dates.
+
+In addition to this, I also use the following categories:
+
+- `shell`: For an application that has multiple domains, a shell provides the entry - point for a domain
+- `api`: Provides functionalities exposed to other domains
+- `domain`: Domain logic like calculating additional expenses (not used here), validations or facades for use cases and state management. I will come back to this in the next chapter.
+
+
+
+
 
 This project was generated using [Nx](https://nx.dev).
 

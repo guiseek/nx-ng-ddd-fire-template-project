@@ -1,0 +1,9 @@
+<div (click)="clicked.emit()">
+  <img
+    [src]="url"
+    [alt]="alt"
+    (load)="load = true"
+    (error)="url = null"
+    *ngIf="!!url"
+  />
+</div>

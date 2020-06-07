@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  .mat-list-item {
+    .mat-icon {
+      transition: opacity 0.15s ease-in-out;
+    }
+    .mat-icon {
+      opacity: 0.3;
+    }
+    &:hover .mat-icon {
+      opacity: 0.6;
+    }
+    &.active .mat-icon {
+      opacity: 1;
+    }
+  }
+}
