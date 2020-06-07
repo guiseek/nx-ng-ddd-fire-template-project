@@ -5,6 +5,7 @@ import { TabComponent } from './tab/tab.component';
 
 @Component({
   selector: 'seek-nav-tabs',
+  exportAs: 'seek-nav-tabs',
   templateUrl: './nav-tabs.component.html',
   styleUrls: ['./nav-tabs.component.scss'],
   // changeDetection: ChangeDetectionStrategy.OnPush
@@ -92,9 +93,11 @@ export class NavTabsComponent implements AfterContentInit {
   }
 
   getActiveTab() {
-    return this.tabs.find(tab => tab.active);
+    return this.tabs.find(tab => tab.active)
   }
-
+  getActiveTabIndex() {
+    return this.tabs.toArray().findIndex(tab => tab.active)
+  }
   getTimeLoaded(index: number) {
     if (!this.tabLoadTimes[index]) {
       this.tabLoadTimes[index] = new Date();

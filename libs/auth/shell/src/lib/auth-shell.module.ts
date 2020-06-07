@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { redirectLoggedInTo } from '@angular/fire/auth-guard';
 import { RouterModule } from '@angular/router';
 import { AuthFeatureLoginModule } from '@seek/auth/feature-login';
+import { AuthFeatureRegisterModule } from '@seek/auth/feature-register';
 import { SharedUiCommonModule, SharedUiMaterialModule } from '@seek/shared/ui/common';
 import { AuthShellComponent } from './auth-shell/auth-shell.component';
 import { SelectCompanyComponent } from './select-company/select-company.component';
@@ -15,6 +16,7 @@ const redirectLoggedInToItems = () => redirectLoggedInTo(['/produtos']);
     SharedUiCommonModule,
     SharedUiMaterialModule,
     AuthFeatureLoginModule,
+    AuthFeatureRegisterModule,
     RouterModule.forChild([
       {
         path: '',

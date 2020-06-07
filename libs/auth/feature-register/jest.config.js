@@ -1,7 +1,7 @@
 module.exports = {
-  name: 'shared-util-auth',
+  name: 'auth-feature-register',
   preset: '../../../jest.config.js',
-  coverageDirectory: '../../../coverage/libs/shared/util-auth',
+  coverageDirectory: '../../../coverage/libs/auth/feature-register',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

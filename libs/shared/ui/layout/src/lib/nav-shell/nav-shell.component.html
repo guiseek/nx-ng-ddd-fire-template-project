@@ -5,17 +5,12 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
 
-    <ng-content select="mat-card"></ng-content>
+    <ng-content select=".profile"></ng-content>
 
     <ng-content select="nav"></ng-content>
 
     <seek-nav-list></seek-nav-list>
 
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content class="shell-content" role="contentinfo">
     <mat-toolbar color="primary">

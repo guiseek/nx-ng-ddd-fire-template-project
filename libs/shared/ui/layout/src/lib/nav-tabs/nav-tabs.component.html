@@ -1,12 +1,16 @@
-<mat-tab-group (selectedIndexChange)="change($event)">
+<mat-tab-group
+  [selectedIndex]="getActiveTabIndex()"
+  (selectedIndexChange)="change($event)"
+>
   <mat-tab
     *ngFor="let tab of tabs"
     (click)="selectTab(tab)"
     [label]="tab.title"
   >
-    <ng-template matTabContent>
-      <ng-content selct="seek-tab"></ng-content>
-    </ng-template>
+
+    <ng-content></ng-content>
+
+    <!-- <ng-content selct="seek-tab"></ng-content> -->
 
   </mat-tab>
   <!-- <mat-tab label="First"> -->
@@ -15,6 +19,7 @@
     </ng-template> -->
   <!-- </mat-tab> -->
 </mat-tab-group>
+
 <ng-template seekTabContent></ng-template>
 <!--
 <mat-tab-group>

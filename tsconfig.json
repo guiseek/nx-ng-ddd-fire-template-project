@@ -10,41 +10,93 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@env": ["environments/environment.ts"],
-      "@env/*": ["environments/*"],
-      "@seek/api-interfaces": ["libs/api-interfaces/src/index.ts"],
-      "@seek/auth/domain": ["libs/auth/domain/src/index.ts"],
-      "@seek/auth/feature-login": ["libs/auth/feature-login/src/index.ts"],
-      "@seek/auth/feature-account": ["libs/auth/feature-account/src/index.ts"],
-      "@seek/shared/domain": ["libs/shared/domain/src/index.ts"],
-      "@seek/auth/shell": ["libs/auth/shell/src/index.ts"],
-      "@seek/catalog/domain": ["libs/catalog/domain/src/index.ts"],
+      "@env": [
+        "environments/environment.ts"
+      ],
+      "@env/*": [
+        "environments/*"
+      ],
+      "@seek/api-interfaces": [
+        "libs/api-interfaces/src/index.ts"
+      ],
+      "@seek/auth/domain": [
+        "libs/auth/domain/src/index.ts"
+      ],
+      "@seek/auth/feature-login": [
+        "libs/auth/feature-login/src/index.ts"
+      ],
+      "@seek/auth/feature-account": [
+        "libs/auth/feature-account/src/index.ts"
+      ],
+      "@seek/shared/domain": [
+        "libs/shared/domain/src/index.ts"
+      ],
+      "@seek/auth/shell": [
+        "libs/auth/shell/src/index.ts"
+      ],
+      "@seek/catalog/domain": [
+        "libs/catalog/domain/src/index.ts"
+      ],
       "@seek/catalog/feature-browse-products": [
         "libs/catalog/feature-browse-products/src/index.ts"
       ],
-      "@seek/catalog/shell": ["libs/catalog/shell/src/index.ts"],
+      "@seek/catalog/shell": [
+        "libs/catalog/shell/src/index.ts"
+      ],
       "@seek/catalog/feature-manage-products": [
         "libs/catalog/feature-manage-products/src/index.ts"
       ],
-      "@seek/shared/ui-currency": ["libs/shared/ui-currency/src/index.ts"],
-      "@seek/shared/util-testing": ["libs/shared/util-testing/src/index.ts"],
-      "@seek/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
-      "@seek/shared/ui/common": ["libs/shared/ui/common/src/index.ts"],
-      "@seek/auth/api": ["libs/auth/api/src/index.ts"],
-      "@seek/shared/util-auth": ["libs/shared/util-auth/src/index.ts"],
-      "@seek/shared/ui/address": ["libs/shared/ui/address/src/index.ts"],
-      "@seek/shared/ui/layout": ["libs/shared/ui/layout/src/index.ts"],
-      "@seek/catalog/api": ["libs/catalog/api/src/index.ts"],
-      "@seek/shared/ui/date-time": ["libs/shared/ui/date-time/src/index.ts"],
-      "@seek/shared/util-catalog": ["libs/shared/util-catalog/src/index.ts"],
-      "@seek/shared/ui/photo": ["libs/shared/ui/photo/src/index.ts"]
+      "@seek/shared/ui-currency": [
+        "libs/shared/ui-currency/src/index.ts"
+      ],
+      "@seek/shared/util-testing": [
+        "libs/shared/util-testing/src/index.ts"
+      ],
+      "@seek/shared/ui/select": [
+        "libs/shared/ui/select/src/index.ts"
+      ],
+      "@seek/shared/ui/common": [
+        "libs/shared/ui/common/src/index.ts"
+      ],
+      "@seek/auth/api": [
+        "libs/auth/api/src/index.ts"
+      ],
+      "@seek/shared/ui/address": [
+        "libs/shared/ui/address/src/index.ts"
+      ],
+      "@seek/shared/ui/layout": [
+        "libs/shared/ui/layout/src/index.ts"
+      ],
+      "@seek/catalog/api": [
+        "libs/catalog/api/src/index.ts"
+      ],
+      "@seek/shared/ui/date-time": [
+        "libs/shared/ui/date-time/src/index.ts"
+      ],
+      "@seek/shared/util-catalog": [
+        "libs/shared/util-catalog/src/index.ts"
+      ],
+      "@seek/shared/ui/photo": [
+        "libs/shared/ui/photo/src/index.ts"
+      ],
+      "@seek/auth/feature-register": [
+        "libs/auth/feature-register/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

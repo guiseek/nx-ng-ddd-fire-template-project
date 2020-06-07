@@ -9,4 +9,4 @@ import { CredentialFormComponent } from './components/credential-form/credential
   declarations: [CredentialFormComponent],
   exports: [CredentialFormComponent],
 })
-export class SharedUtilAuthModule {}
+export class AuthFeatureRegisterModule {}

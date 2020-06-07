@@ -21,8 +21,13 @@
             "polyfills": "apps/webapp/src/polyfills.ts",
             "tsConfig": "apps/webapp/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/webapp/src/favicon.ico", "apps/webapp/src/assets"],
-            "styles": ["apps/webapp/src/styles.scss"],
+            "assets": [
+              "apps/webapp/src/favicon.ico",
+              "apps/webapp/src/assets"
+            ],
+            "styles": [
+              "apps/webapp/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,7 +86,10 @@
               "apps/webapp/tsconfig.app.json",
               "apps/webapp/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/webapp/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/webapp/**"
+            ]
           }
         },
         "test": {
@@ -120,8 +128,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/webapp-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/webapp-e2e/**"]
+            "tsConfig": [
+              "apps/webapp-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/webapp-e2e/**"
+            ]
           }
         }
       }
@@ -139,7 +152,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -168,7 +183,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**"
+            ]
           }
         },
         "test": {
@@ -194,7 +212,10 @@
               "libs/api-interfaces/tsconfig.lib.json",
               "libs/api-interfaces/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/api-interfaces/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/api-interfaces/**"
+            ]
           }
         },
         "test": {
@@ -232,7 +253,10 @@
               "libs/auth/domain/tsconfig.lib.json",
               "libs/auth/domain/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/auth/domain/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/auth/domain/**"
+            ]
           }
         },
         "test": {
@@ -276,7 +300,10 @@
               "libs/auth/feature-login/tsconfig.lib.json",
               "libs/auth/feature-login/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/auth/feature-login/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/auth/feature-login/**"
+            ]
           }
         },
         "test": {
@@ -320,7 +347,10 @@
               "libs/auth/feature-account/tsconfig.lib.json",
               "libs/auth/feature-account/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/auth/feature-account/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/auth/feature-account/**"
+            ]
           }
         },
         "test": {
@@ -364,7 +394,10 @@
               "libs/shared/domain/tsconfig.lib.json",
               "libs/shared/domain/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/domain/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/domain/**"
+            ]
           }
         },
         "test": {
@@ -396,7 +429,10 @@
               "libs/auth/shell/tsconfig.lib.json",
               "libs/auth/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/auth/shell/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/auth/shell/**"
+            ]
           }
         },
         "test": {
@@ -440,7 +476,10 @@
               "libs/catalog/domain/tsconfig.lib.json",
               "libs/catalog/domain/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/catalog/domain/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/catalog/domain/**"
+            ]
           }
         },
         "test": {
@@ -519,7 +558,10 @@
               "libs/catalog/shell/tsconfig.lib.json",
               "libs/catalog/shell/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/catalog/shell/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/catalog/shell/**"
+            ]
           }
         },
         "test": {
@@ -610,7 +652,10 @@
               "libs/shared/ui-currency/tsconfig.lib.json",
               "libs/shared/ui-currency/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui-currency/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui-currency/**"
+            ]
           }
         },
         "test": {
@@ -642,7 +687,10 @@
               "libs/shared/util-testing/tsconfig.lib.json",
               "libs/shared/util-testing/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/util-testing/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/util-testing/**"
+            ]
           }
         },
         "test": {
@@ -680,7 +728,10 @@
               "libs/shared/ui/select/tsconfig.lib.json",
               "libs/shared/ui/select/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/select/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/select/**"
+            ]
           }
         },
         "test": {
@@ -724,7 +775,10 @@
               "libs/shared/ui/common/tsconfig.lib.json",
               "libs/shared/ui/common/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/common/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/common/**"
+            ]
           }
         },
         "test": {
@@ -756,7 +810,10 @@
               "libs/auth/api/tsconfig.lib.json",
               "libs/auth/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/auth/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/auth/api/**"
+            ]
           }
         },
         "test": {
@@ -766,38 +823,6 @@
             "tsConfig": "libs/auth/api/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/auth/api/src/test-setup.ts"
-          }
-        }
-      },
-      "schematics": {
-        "@nrwl/angular:component": {
-          "style": "scss"
-        }
-      }
-    },
-    "shared-util-auth": {
-      "projectType": "library",
-      "root": "libs/shared/util-auth",
-      "sourceRoot": "libs/shared/util-auth/src",
-      "prefix": "auth",
-      "architect": {
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "libs/shared/util-auth/tsconfig.lib.json",
-              "libs/shared/util-auth/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!libs/shared/util-auth/**"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "libs/shared/util-auth/jest.config.js",
-            "tsConfig": "libs/shared/util-auth/tsconfig.spec.json",
-            "passWithNoTests": true,
-            "setupFile": "libs/shared/util-auth/src/test-setup.ts"
           }
         }
       },
@@ -820,7 +845,10 @@
               "libs/shared/ui/address/tsconfig.lib.json",
               "libs/shared/ui/address/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/address/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/address/**"
+            ]
           }
         },
         "test": {
@@ -864,7 +892,10 @@
               "libs/shared/ui/layout/tsconfig.lib.json",
               "libs/shared/ui/layout/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/layout/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/layout/**"
+            ]
           }
         },
         "test": {
@@ -896,7 +927,10 @@
               "libs/catalog/api/tsconfig.lib.json",
               "libs/catalog/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/catalog/api/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/catalog/api/**"
+            ]
           }
         },
         "test": {
@@ -928,7 +962,10 @@
               "libs/shared/ui/date-time/tsconfig.lib.json",
               "libs/shared/ui/date-time/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/date-time/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/date-time/**"
+            ]
           }
         },
         "test": {
@@ -972,7 +1009,10 @@
               "libs/shared/util-catalog/tsconfig.lib.json",
               "libs/shared/util-catalog/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/util-catalog/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/util-catalog/**"
+            ]
           }
         },
         "test": {
@@ -1016,7 +1056,10 @@
               "libs/shared/ui/photo/tsconfig.lib.json",
               "libs/shared/ui/photo/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui/photo/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui/photo/**"
+            ]
           }
         },
         "test": {
@@ -1026,6 +1069,92 @@
             "tsConfig": "libs/shared/ui/photo/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/shared/ui/photo/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "playground": {
+      "root": "apps/webapp",
+      "sourceRoot": "apps/webapp/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/playground",
+            "index": "apps/webapp/src/index.html",
+            "main": "apps/webapp/src/main.playground.ts",
+            "polyfills": "apps/webapp/src/polyfills.ts",
+            "tsConfig": "apps/webapp/tsconfig.playground.json",
+            "aot": false,
+            "assets": [
+              "apps/webapp/src/favicon.ico",
+              "apps/webapp/src/assets"
+            ],
+            "styles": [
+              "apps/webapp/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/webapp/src/environments/environment.ts",
+                  "with": "apps/webapp/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "playground:build",
+            "port": 4201
+          }
+        }
+      }
+    },
+    "auth-feature-register": {
+      "projectType": "library",
+      "root": "libs/auth/feature-register",
+      "sourceRoot": "libs/auth/feature-register/src",
+      "prefix": "auth",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/auth/feature-register/tsconfig.lib.json",
+              "libs/auth/feature-register/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/auth/feature-register/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/auth/feature-register/jest.config.js",
+            "tsConfig": "libs/auth/feature-register/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/auth/feature-register/src/test-setup.ts"
           }
         }
       },
