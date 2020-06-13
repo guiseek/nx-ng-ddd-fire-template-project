@@ -168,6 +168,13 @@
               "domain:customer",
               "domain:shared"
             ]
+          },
+          {
+            "sourceTag": "domain:catalog",
+            "onlyDependOnLibsWithTags": [
+              "domain:catalog",
+              "domain:shared"
+            ]
           }
         ]
       }

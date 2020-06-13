@@ -1,0 +1,8 @@
+<p>products works!</p>
+<pre>{{ (product$ | async) | json }}</pre>
+<div>
+  <catalog-product-list
+    [products]="products$ | async"
+    (clicked)="onSelect($event)"
+  ></catalog-product-list>
+</div>

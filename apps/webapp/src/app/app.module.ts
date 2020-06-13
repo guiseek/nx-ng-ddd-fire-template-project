@@ -9,6 +9,10 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '@env/environment';
+// import { EffectsModule } from '@ngrx/effects';
+// import { StoreRouterConnectingModule } from '@ngrx/router-store';
+// import { StoreModule } from '@ngrx/store';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -23,37 +27,13 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
     AngularFirestoreModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AppRoutingModule
-    // RouterModule.forRoot([
-    //   {
-    //     path: 'auth',
-    //     loadChildren: () =>
-    //       import('@seek/auth/shell').then((module) => module.AuthShellModule),
-    //   },
-    //   {
-    //     path: 'catalog',
-    //     loadChildren: () =>
-    //       import('@seek/catalog/shell').then(
-    //         (module) => module.CatalogShellModule
-    //       ),
-    //   },
-    //   {
-    //     path: '',
-    //     loadChildren: () =>
-    //       import('@seek/customer/feature-main').then(
-    //         (module) => module.CustomerFeatureMainModule
-    //       ),
-    //   },
-    //   {
-    //     path: 'dashboard-shell',
-    //     loadChildren: () =>
-    //       import('@seek/dashboard/shell').then(
-    //         (module) => module.DashboardShellModule
-    //       ),
-    //   },
-    // ]),
+    AppRoutingModule,
+    // StoreModule.forRoot({}),
+    // EffectsModule.forRoot([]),
+    // !environment.production ? StoreDevtoolsModule.instrument() : [],
+    // StoreRouterConnectingModule.forRoot()
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

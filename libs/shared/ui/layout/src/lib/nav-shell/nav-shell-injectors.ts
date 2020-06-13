@@ -12,7 +12,7 @@ export interface NavShell {
 }
 export const NAV_SHELL_CONFIG: Array<NavShell> = [
   {
-    path: '/',
+    path: '/catalog',
     label: 'Catálogo',
     roles: ['admin'],
     icon: 'list'

@@ -1,0 +1,27 @@
+<mat-card class="table">
+  <mat-list>
+    <h2 mat-subheader>{{ products.length }} encontrados</h2>
+    <mat-list-item
+      *ngFor="let product of products"
+      (click)="clicked.emit(product)"
+    >
+      <img mat-list-avatar src="assets/icons/sun.svg" alt="">
+      <h3 mat-line class="mat-h3">{{product.name}}</h3>
+      <p mat-line>{{ product.description }}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-card>
+<!-- <mat-card class="table">
+  <mat-nav-list>
+    <h2 mat-subheader>{{ products.length }} encontrados</h2>
+    <a
+      mat-list-item
+      *ngFor="let product of products"
+      [routerLink]="product.id"
+    >
+      <img mat-list-avatar src="assets/icons/sun.svg" alt="">
+      <h3 mat-line class="mat-h3">{{product.name}}</h3>
+      <p mat-line>{{ product.description }}</p>
+    </a>
+  </mat-nav-list>
+</mat-card> -->

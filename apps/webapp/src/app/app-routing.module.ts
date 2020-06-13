@@ -1,10 +1,5 @@
-import { registerLocaleData } from '@angular/common';
-import localePtExtra from '@angular/common/locales/extra/br';
-import localePt from '@angular/common/locales/pt';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-registerLocaleData(localePt, 'pt-BR', localePtExtra);
 
 @NgModule({
   imports: [
@@ -29,8 +24,8 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
       {
         path: 'catalog',
         loadChildren: () =>
-          import('@seek/catalog/shell')
-            .then(m => m.CatalogShellModule)
+          import('@seek/catalog/feature-shell')
+            .then(m => m.CatalogFeatureShellModule)
       },
       {
         path: 'customer',

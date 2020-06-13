@@ -1,8 +1,8 @@
-<mat-sidenav-container class="shell-nav-container">
+<mat-sidenav-container class="nav-shell-container">
   <mat-sidenav
     #drawer
     *ngIf="navList"
-    class="shell-nav"
+    class="nav-shell"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
@@ -14,7 +14,7 @@
     <!-- <seek-nav-list></seek-nav-list> -->
 
   </mat-sidenav>
-  <mat-sidenav-content class="shell-content" role="contentinfo">
+  <mat-sidenav-content class="nav-shell-content" role="contentinfo">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -34,7 +34,7 @@
     </mat-toolbar>
 
 
-    <ng-content selecr="main"></ng-content>
+    <ng-content select="main"></ng-content>
 
 
   </mat-sidenav-content>
