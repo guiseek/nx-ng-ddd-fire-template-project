@@ -1,10 +1,5 @@
-import { registerLocaleData } from '@angular/common';
-import localePtExtra from '@angular/common/locales/extra/br';
-import localePt from '@angular/common/locales/pt';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-registerLocaleData(localePt, 'pt-BR', localePtExtra);
 
 @NgModule({
   imports: [

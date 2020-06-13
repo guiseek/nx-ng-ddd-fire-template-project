@@ -1,9 +1,16 @@
-<h1>catalog-shell</h1>
+<seek-nav-shell subtitle="Produtos">
 
-<table class="table">
-    <tr *ngFor="let product of productList$ | async">
-        <td>{{product.id}}</td>
-        <td>{{product.name}}</td>
-        <td>{{product.description}}</td>
-    </tr>
-</table>
+  <nav>
+    <seek-nav-list></seek-nav-list>
+  </nav>
+
+  <header>
+    User
+  </header>
+
+  <main>
+    <catalog-products></catalog-products>
+  </main>
+
+
+</seek-nav-shell>

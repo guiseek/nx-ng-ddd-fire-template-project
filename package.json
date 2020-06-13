@@ -57,7 +57,8 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "^0.10.2"
+    "zone.js": "^0.10.2",
+    "@ngrx/router-store": "9.1.0"
   },
   "engines": {
     "node": "10.17"
@@ -95,6 +96,8 @@
     "ts-jest": "25.2.1",
     "ts-node": "~7.0.0",
     "tslint": "~6.0.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "@ngrx/schematics": "9.1.0",
+    "@ngrx/store-devtools": "9.1.0"
   }
 }

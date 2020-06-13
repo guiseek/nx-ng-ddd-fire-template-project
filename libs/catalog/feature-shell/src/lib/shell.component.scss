@@ -1,4 +1,11 @@
-.table td {
-    border: 1px solid;
-    padding:10px;
+:host {
+  overflow: hidden;
+  display: block;
+  flex: 1;
+
+  main {
+    overflow: auto;
+    padding: 6px;
+    flex: 1;
+  }
 }
