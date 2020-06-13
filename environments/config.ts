@@ -5,6 +5,9 @@ export const config = {
     },
     catalog: {
       coll: 'products'
+    },
+    customer: {
+      coll: 'customers'
     }
   }
 }

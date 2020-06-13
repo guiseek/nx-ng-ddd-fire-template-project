@@ -1,6 +1,7 @@
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { NgModule } from '@angular/core';
 import { redirectLoggedInTo } from '@angular/fire/auth-guard';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
 import { AuthFeatureLoginModule } from '@seek/auth/feature-login';
 import { AuthFeatureRegisterModule } from '@seek/auth/feature-register';
@@ -13,6 +14,7 @@ const redirectLoggedInToItems = () => redirectLoggedInTo(['/produtos']);
 @NgModule({
   imports: [
     DragDropModule,
+    FlexLayoutModule,
     SharedUiCommonModule,
     SharedUiMaterialModule,
     AuthFeatureLoginModule,
@@ -25,9 +27,15 @@ const redirectLoggedInToItems = () => redirectLoggedInTo(['/produtos']);
       {
         path: 'company',
         component: SelectCompanyComponent
+      },
+      {
+        path: 'account',
+        loadChildren: async () =>
+          (await (import('@seek/auth/feature-account')))
+            .AuthFeatureAccountModule
       }
     ]),
   ],
   declarations: [AuthShellComponent, SelectCompanyComponent],
 })
-export class AuthShellModule {}
+export class AuthShellModule { }

@@ -161,6 +161,13 @@
             "onlyDependOnLibsWithTags": [
               "type:util"
             ]
+          },
+          {
+            "sourceTag": "domain:customer",
+            "onlyDependOnLibsWithTags": [
+              "domain:customer",
+              "domain:shared"
+            ]
           }
         ]
       }
@@ -168,13 +175,19 @@
     "directive-selector": [
       true,
       "attribute",
-      ["app",""],
+      [
+        "app",
+        ""
+      ],
       "camelCase"
     ],
     "component-selector": [
       true,
       "element",
-      ["app",""],
+      [
+        "app",
+        ""
+      ],
       "kebab-case"
     ],
     "no-conflicting-lifecycle": true,

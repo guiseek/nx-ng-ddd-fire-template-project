@@ -1,1 +1,22 @@
-<auth-account-menu [user]="user$ | async"></auth-account-menu>
+<seek-nav-shell>
+
+  <nav>
+    <seek-nav-list></seek-nav-list>
+  </nav>
+
+  <header>
+    <span>Account</span>
+
+    <auth-account-menu [user]="user$ | async"></auth-account-menu>
+  </header>
+
+  <main>
+    <mat-toolbar>
+      <span>Account conntainer</span>
+    </mat-toolbar>
+
+  </main>
+
+</seek-nav-shell>
+
+

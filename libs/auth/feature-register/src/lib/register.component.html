@@ -1,0 +1,63 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="placeholder-opacity">
+
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      autofocus
+      cdkFocusInitial
+      name="displayName"
+      formControlName="displayName"
+      placeholder="Ex.: Raul Santos Seixas"
+      aria-required="true"
+      required
+    >
+    <mat-hint>Nome completo</mat-hint>
+    <mat-error>Preencha seu nome</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      placeholder="ex.: nome@provedor.com"
+      aria-required="true"
+      required
+    >
+    <mat-hint>Endereço de email</mat-hint>
+    <mat-error *ngIf="form.get('email') as email">
+      <span *ngIf="email.hasError('required')">
+        Seu email é obrigatório
+      </span>
+      <span *ngIf="email.hasError('email')">
+        Endereço de email inválido
+      </span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+      type="password"
+      matInput
+      formControlName="password"
+      placeholder="Ex. Ae10u!"
+      aria-required="true"
+      required
+    >
+    <mat-hint>Senha de acesso</mat-hint>
+    <mat-error *ngIf="form.get('password') as password">
+      <span *ngIf="password.hasError('minLength')">
+        Mínimo de 6 caracteres
+      </span>
+      <span *ngIf="password.hasError('passwordStrength')">
+        {{ password.getError('passwordStrength') }}
+      </span>
+    </mat-error>
+  </mat-form-field>
+
+  <button type="submit" mat-stroked-button>
+    Submeter cadastro
+  </button>
+</form>
+

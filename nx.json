@@ -14,27 +14,20 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
       }
     }
   },
   "projects": {
     "webapp": {
-      "tags": [
-        "domain:app",
-        "type:app"
-      ]
+      "tags": ["domain:app", "type:app"]
     },
     "webapp-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "webapp"
-      ]
+      "implicitDependencies": ["webapp"]
+    },
+    "playground": {
+      "tags": ["domain:app", "type:app"]
     },
     "api": {
       "tags": []
@@ -43,127 +36,82 @@
       "tags": []
     },
     "auth-domain": {
-      "tags": [
-        "domain:auth",
-        "type:domain-logic"
-      ]
+      "tags": ["domain:auth", "type:domain-logic"]
     },
     "auth-feature-login": {
-      "tags": [
-        "domain:auth",
-        "type:feature"
-      ]
+      "tags": ["domain:auth", "type:feature"]
     },
     "auth-feature-account": {
-      "tags": [
-        "domain:auth",
-        "type:feature"
-      ]
+      "tags": ["domain:auth", "type:feature"]
     },
     "shared-domain": {
-      "tags": [
-        "domain:shared",
-        "type:util"
-      ]
+      "tags": ["domain:shared", "type:util"]
     },
     "auth-shell": {
-      "tags": [
-        "type:shell"
-      ]
+      "tags": ["type:shell"]
     },
     "catalog-domain": {
-      "tags": [
-        "domain:catalog",
-        "type:domain-logic"
-      ]
+      "tags": ["domain:catalog", "type:domain-logic"]
     },
     "catalog-feature-browse-products": {
-      "tags": [
-        "domain:catalog",
-        "type:feature"
-      ]
+      "tags": ["domain:catalog", "type:feature"]
     },
     "catalog-shell": {
-      "tags": [
-        "type:shell"
-      ]
+      "tags": ["type:shell"]
     },
     "catalog-feature-manage-products": {
-      "tags": [
-        "domain:catalog",
-        "type:feature"
-      ]
+      "tags": ["domain:catalog", "type:feature"]
     },
     "shared-ui-currency": {
-      "tags": [
-        "domain:shared",
-        "type:ui"
-      ]
+      "tags": ["domain:shared", "type:ui"]
     },
     "shared-util-testing": {
       "tags": []
     },
     "shared-ui-select": {
-      "tags": [
-        "domain:shared",
-        "type:ui"
-      ]
+      "tags": ["domain:shared", "type:ui"]
     },
     "shared-ui-common": {
-      "tags": [
-        "type:ui",
-        "domain:shared"
-      ]
+      "tags": ["type:ui", "domain:shared"]
     },
     "auth-api": {
-      "tags": [
-        "type:api",
-        "domain:auth/api",
-        "domain:auth"
-      ]
+      "tags": ["type:api", "domain:auth/api", "domain:auth"]
     },
     "shared-ui-address": {
-      "tags": [
-        "domain:shared",
-        "type:ui"
-      ]
+      "tags": ["domain:shared", "type:ui"]
     },
     "shared-ui-layout": {
-      "tags": [
-        "domain:shared",
-        "type:ui"
-      ]
+      "tags": ["domain:shared", "type:ui"]
     },
     "catalog-api": {
-      "tags": [
-        "type:api",
-        "domain:catalog/api",
-        "domain:catalog"
-      ]
+      "tags": ["type:api", "domain:catalog/api", "domain:catalog"]
     },
     "shared-ui-date-time": {
-      "tags": [
-        "domain:shared",
-        "type:ui"
-      ]
+      "tags": ["domain:shared", "type:ui"]
     },
     "shared-util-catalog": {
-      "tags": [
-        "type:util",
-        "domain:catalog"
-      ]
+      "tags": ["type:util", "domain:catalog"]
     },
     "shared-ui-photo": {
-      "tags": [
-        "type:ui",
-        "domain:shared"
-      ]
+      "tags": ["type:ui", "domain:shared"]
     },
     "auth-feature-register": {
-      "tags": [
-        "type:feature",
-        "domain:shared"
-      ]
+      "tags": ["domain:auth", "type:feature"]
+    },
+    "customer-domain": {
+      "tags": ["domain:customer", "type:domain-logic"]
+    },
+    "customer-feature-main": {
+      "tags": ["domain:customer", "type:feature"]
+    },
+    "shared-ui-table": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "dashboard-shell": {
+      "tags": ["type:shell"]
+    },
+    "shared-ui-list": {
+      "tags": ["type:ui"]
     }
   }
 }

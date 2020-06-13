@@ -1,36 +1,40 @@
-<p>auth-shell works!</p>
+<mat-card>
+  <mat-tab-group mat-stretch-tabs dynamicHeight>
+    <mat-tab label="Login">
+      <ng-template matTabContent>
 
-<mat-tab-group>
-  <mat-tab label="Login">
-    <ng-template matTabContent>
+        <auth-login
+          (authorized)="onAuthorized($event)"
+        ></auth-login>
 
-      <auth-login>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Registro">
+      <ng-template matTabContent>
 
-      </auth-login>
+        <auth-register
+          (authorized)="onAuthorized($event)"
+        ></auth-register>
 
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Registro">
-    <ng-template matTabContent>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input type="text" matInput formControlName="displayName">
-          <mat-error>Nome obrigatório</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Email</mat-label>
-          <input type="email" matInput formControlName="email">
-          <mat-error>Email inválido</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Senha</mat-label>
-          <input type="password" matInput formControlName="password">
-          <mat-error>Mínimo de 6 caracteres</mat-error>
-        </mat-form-field>
-      </form>
-    </ng-template>
-  </mat-tab>
-</mat-tab-group>
-
+        <!-- <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <mat-label>Nome</mat-label>
+            <input type="text" matInput formControlName="displayName">
+            <mat-error>Nome obrigatório</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput formControlName="email">
+            <mat-error>Email inválido</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput formControlName="password">
+            <mat-error>Mínimo de 6 caracteres</mat-error>
+          </mat-form-field>
+        </form> -->
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
 <!-- <router-outlet></router-outlet> -->

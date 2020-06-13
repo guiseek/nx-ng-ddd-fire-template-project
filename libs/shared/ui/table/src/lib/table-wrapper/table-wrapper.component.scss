@@ -1,0 +1,18 @@
+grow-app-table-wrapper {
+  display: flex;
+  flex: 1 1 auto;
+  width: 100%;
+
+  table,
+  .mat-table,
+  .cdk-table {
+    width: 100%;
+  }
+  .cdk-column-id {
+    width: 40px;
+    max-width: 40px;
+  }
+  .cdk-column-context {
+    justify-content: flex-end;
+  }
+}

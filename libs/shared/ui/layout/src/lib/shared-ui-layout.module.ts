@@ -1,3 +1,4 @@
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
 import { PortalModule } from '@angular/cdk/portal';
@@ -14,13 +15,15 @@ import { RouterModule } from '@angular/router';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardsComponent } from './card-list/cards/cards.component';
 import { ListComponent } from './card-list/list/list.component';
+import { NavGroupComponent } from './nav-group/nav-group.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { NavShell, NAV_SHELL, NAV_SHELL_CONFIG } from './nav-shell/nav-shell-injectors';
 import { NavShellComponent } from './nav-shell/nav-shell.component';
 import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
+import { TabContentDirective } from './nav-tabs/tab/tab-content.directive';
 import { TabComponent } from './nav-tabs/tab/tab.component';
 import { PortalWindowComponent } from './portal-window/portal-window.component';
-import { TabContentDirective } from './nav-tabs/tab/tab-content.directive';
+import { NavComponent } from './nav/nav.component';
 
 const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
 
@@ -37,7 +40,8 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    CdkAccordionModule,
   ],
   declarations: [
     NavShellComponent,
@@ -48,7 +52,9 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     ListComponent,
     NavTabsComponent,
     TabComponent,
-    TabContentDirective
+    TabContentDirective,
+    NavGroupComponent,
+    NavComponent
   ],
   exports: [
     NavShellComponent,
@@ -59,7 +65,9 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     ListComponent,
     NavTabsComponent,
     TabComponent,
-    TabContentDirective
+    TabContentDirective,
+    NavGroupComponent,
+    NavComponent
   ]
 })
 export class SharedUiLayoutModule {

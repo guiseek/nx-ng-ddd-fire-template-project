@@ -109,18 +109,17 @@ ng generate @ngneat/spectator:spectator-component --name=components/account-menu
 
 
 # Shared
-- ## Ui (*User Interface*)
 
-> ## Ui
-> ```sh
-> ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
->
-> ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
->
-> ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
->
-> npm i ngx-currency
-> ```
+## Ui
+```sh
+ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
+
+ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
+
+ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
+
+npm i ngx-currency
+```
 
 ```sh
 
@@ -142,6 +141,8 @@ ng generate @angular/material:navigation --name=nav-shell --project=shared-ui-la
 
 ng generate @ngneat/spectator:spectator-component --name=nav-list --project=shared-ui-layout --style=scss --export --withHost
 
+ng generate @ngneat/spectator:spectator-component --name=nav-group --project=shared-ui-layout --style=scss --export --withHost
+
 ng generate @ngneat/spectator:spectator-component --name=portal-window --project=shared-ui-layout --style=scss --export --inlineTemplate --withCustomHost
 
 ng generate @ngneat/spectator:spectator-component --name=card-list --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
@@ -151,9 +152,24 @@ ng generate @ngneat/spectator:spectator-component --name=nav-tabs --project=shar
 ng generate @ngneat/spectator:spectator-component --name=nav-tabs/tab --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
 
 ng generate @ngneat/spectator:spectator-directive --name=nav-tabs/tab/tab-content --project=shared-ui-layout --export
-
 ```
 
+
+# Ui Layout
+```sh
+ng generate @nrwl/angular:library --name=layout --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=list --project=shared-ui-list --style=scss --export --withHost --no-interactive
+ng generate @ngneat/spectator:spectator-component --name=list-desktop --project=shared-ui-list --style=scss --export --withHost --no-interactive
+ng generate @ngneat/spectator:spectator-component --name=list-phone --project=shared-ui-list --style=scss --export --withHost --no-interactive
+```
+
+# Ui Table
+```sh
+ng generate @nrwl/angular:library --name=table --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive -d
+
+ng generate @angular/material:table --name=table --project=shared-ui-table --style=scss --changeDetection=OnPush --skipImport --no-interactive --flat
+```
 
 # Ui Select
 ```
@@ -197,7 +213,40 @@ ng g c avatar --project shared-ui-photo --export
 ng g c crop-photo --project shared-ui-photo --export
 ng g c drop-photo --project shared-ui-photo --export
 ng g d drop-photo --project shared-ui-photo --flat=false --export
+```
 
+## Shape overlays
+```sh
+ng generate @schematics/angular:component --name=components/shape-overlays --project=customer-feature-main --style=scss --changeDetection=OnPush --inlineTemplate --skipImport --skipTests
+```
+
+# Customer
+
+## Domain
+
+```sh
+ng generate @angular-architects/ddd:domain --name=customer --no-interactive
+```
+
+## Feature
+```sh
+ng generate @angular-architects/ddd:feature --name=main --domain=customer --app=webapp --entity=customer --no-interactive
+```
+
+## Components
+```sh
+ng generate @schematics/angular:component --name=components/list --project=customer-feature-main --style=scss --no-interactive;
+
+ng generate @schematics/angular:component --name=components/form --project=customer-feature-main --style=scss --no-interactive
+```
+
+## Containers
+```sh
+ng generate @schematics/angular:component --name=contaiers/new --project=customer-feature-main --style=scss --no-interactive;
+
+ng generate @schematics/angular:component --name=contaiers/detail --project=customer-feature-main --style=scss --no-interactive
+
+ng generate @schematics/angular:component --name=contaiers/home --project=customer-feature-main --style=scss --no-interactive
 ```
 
 ---

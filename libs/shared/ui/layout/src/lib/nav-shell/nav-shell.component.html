@@ -1,24 +1,27 @@
 <mat-sidenav-container class="shell-nav-container">
   <mat-sidenav
-    #drawer class="shell-nav"
+    #drawer
+    *ngIf="navList"
+    class="shell-nav"
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
 
-    <ng-content select=".profile"></ng-content>
+    <!-- <ng-content select=".profile"></ng-content> -->
 
     <ng-content select="nav"></ng-content>
 
-    <seek-nav-list></seek-nav-list>
+    <!-- <seek-nav-list></seek-nav-list> -->
 
   </mat-sidenav>
   <mat-sidenav-content class="shell-content" role="contentinfo">
     <mat-toolbar color="primary">
       <button
         type="button"
+        *ngIf="navList"
         mat-icon-button
         aria-label="Alternar menu"
-        (click)="drawer.toggle()"
+        (click)="sidenav.toggle()"
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
