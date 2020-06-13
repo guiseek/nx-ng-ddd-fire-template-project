@@ -29,8 +29,8 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
       {
         path: 'catalog',
         loadChildren: () =>
-          import('@seek/catalog/shell')
-            .then(m => m.CatalogShellModule)
+          import('@seek/catalog/feature-shell')
+            .then(m => m.CatalogFeatureShellModule)
       },
       {
         path: 'customer',

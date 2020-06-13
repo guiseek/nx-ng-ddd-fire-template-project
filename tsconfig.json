@@ -24,14 +24,6 @@
       "@seek/auth/feature-account": ["libs/auth/feature-account/src/index.ts"],
       "@seek/shared/domain": ["libs/shared/domain/src/index.ts"],
       "@seek/auth/shell": ["libs/auth/shell/src/index.ts"],
-      "@seek/catalog/domain": ["libs/catalog/domain/src/index.ts"],
-      "@seek/catalog/feature-browse-products": [
-        "libs/catalog/feature-browse-products/src/index.ts"
-      ],
-      "@seek/catalog/shell": ["libs/catalog/shell/src/index.ts"],
-      "@seek/catalog/feature-manage-products": [
-        "libs/catalog/feature-manage-products/src/index.ts"
-      ],
       "@seek/shared/ui-currency": ["libs/shared/ui-currency/src/index.ts"],
       "@seek/shared/util-testing": ["libs/shared/util-testing/src/index.ts"],
       "@seek/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
@@ -39,9 +31,7 @@
       "@seek/auth/api": ["libs/auth/api/src/index.ts"],
       "@seek/shared/ui/address": ["libs/shared/ui/address/src/index.ts"],
       "@seek/shared/ui/layout": ["libs/shared/ui/layout/src/index.ts"],
-      "@seek/catalog/api": ["libs/catalog/api/src/index.ts"],
       "@seek/shared/ui/date-time": ["libs/shared/ui/date-time/src/index.ts"],
-      "@seek/shared/util-catalog": ["libs/shared/util-catalog/src/index.ts"],
       "@seek/shared/ui/photo": ["libs/shared/ui/photo/src/index.ts"],
       "@seek/auth/feature-register": [
         "libs/auth/feature-register/src/index.ts"
@@ -52,7 +42,9 @@
       ],
       "@seek/shared/ui/table": ["libs/shared/ui/table/src/index.ts"],
       "@seek/dashboard/shell": ["libs/dashboard/shell/src/index.ts"],
-      "@seek/shared/ui/list": ["libs/shared/ui/list/src/index.ts"]
+      "@seek/shared/ui/list": ["libs/shared/ui/list/src/index.ts"],
+      "@seek/catalog/domain": ["libs/catalog/domain/src/index.ts"],
+      "@seek/catalog/feature-shell": ["libs/catalog/feature-shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
