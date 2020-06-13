@@ -27,12 +27,6 @@ const redirectLoggedInToItems = () => redirectLoggedInTo(['/produtos']);
       {
         path: 'company',
         component: SelectCompanyComponent
-      },
-      {
-        path: 'account',
-        loadChildren: async () =>
-          (await (import('@seek/auth/feature-account')))
-            .AuthFeatureAccountModule
       }
     ]),
   ],

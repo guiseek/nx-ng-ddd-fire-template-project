@@ -14,17 +14,17 @@ import { ShellComponent } from './shell.component';
         },
         component: ShellComponent,
         canActivate: [AuthGuard],
-        children: [
-          {
-            path: '',
-            data: {
-              icon: 'people',
-              label: 'Customer',
-            },
-            loadChildren: async () =>
-              (await import('@seek/customer/feature-main')).CustomerFeatureMainModule
-          },
-        ]
+        // children: [
+        //   {
+        //     path: '',
+        //     data: {
+        //       icon: 'people',
+        //       label: 'Customer',
+        //     },
+        //     loadChildren: async () =>
+        //       (await import('@seek/customer/feature-main')).CustomerFeatureMainModule
+        //   },
+        // ]
       }
     ]),
   ],

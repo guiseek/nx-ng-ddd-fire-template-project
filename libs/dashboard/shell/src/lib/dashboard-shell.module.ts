@@ -14,6 +14,12 @@ import { ShellComponent } from './shell.component';
         label: 'Conta',
         roles: [],
         path: '/account'
+      },
+      {
+        path: '/customer',
+        label: 'Clientes',
+        icon: 'people',
+        roles: ['admin']
       }
     ]),
     SharedUiPhotoModule,

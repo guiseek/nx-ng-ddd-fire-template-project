@@ -10,6 +10,17 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
   imports: [
     RouterModule.forRoot([
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'dashboard'
+      },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('@seek/dashboard/shell')
+            .then(m => m.DashboardShellModule)
+      },
+      {
         path: 'auth',
         loadChildren: () =>
           import('@seek/auth/shell')
@@ -22,16 +33,10 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
             .then(m => m.CatalogShellModule)
       },
       {
-        path: 'account',
+        path: 'customer',
         loadChildren: () =>
-          (import('@seek/auth/feature-account'))
-            .then(m => m.AuthFeatureAccountModule)
-      },
-      {
-        path: '',
-        loadChildren: () =>
-          import('@seek/dashboard/shell')
-            .then(m => m.DashboardShellModule)
+          import('@seek/customer/feature-main')
+            .then(m => m.CustomerFeatureMainModule)
       },
     ]),
   ],

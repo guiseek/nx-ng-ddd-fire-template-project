@@ -24,6 +24,7 @@ import { TabContentDirective } from './nav-tabs/tab/tab-content.directive';
 import { TabComponent } from './nav-tabs/tab/tab.component';
 import { PortalWindowComponent } from './portal-window/portal-window.component';
 import { NavComponent } from './nav/nav.component';
+import { ToggleThemeComponent } from './toggle-theme/toggle-theme.component';
 
 const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
 
@@ -54,7 +55,8 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     TabComponent,
     TabContentDirective,
     NavGroupComponent,
-    NavComponent
+    NavComponent,
+    ToggleThemeComponent
   ],
   exports: [
     NavShellComponent,
@@ -67,7 +69,8 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     TabComponent,
     TabContentDirective,
     NavGroupComponent,
-    NavComponent
+    NavComponent,
+    ToggleThemeComponent
   ]
 })
 export class SharedUiLayoutModule {

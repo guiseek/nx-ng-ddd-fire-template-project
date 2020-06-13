@@ -158,7 +158,11 @@ ng generate @ngneat/spectator:spectator-directive --name=nav-tabs/tab/tab-conten
 # Ui Layout
 ```sh
 ng generate @nrwl/angular:library --name=layout --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive
+ng generate @ngneat/spectator:spectator-component --name=toggle-theme --project=shared-ui-layout --style=scss --export --no-interactive
+```
 
+# Ui List
+```sh
 ng generate @ngneat/spectator:spectator-component --name=list --project=shared-ui-list --style=scss --export --withHost --no-interactive
 ng generate @ngneat/spectator:spectator-component --name=list-desktop --project=shared-ui-list --style=scss --export --withHost --no-interactive
 ng generate @ngneat/spectator:spectator-component --name=list-phone --project=shared-ui-list --style=scss --export --withHost --no-interactive

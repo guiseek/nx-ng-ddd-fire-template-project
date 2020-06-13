@@ -1,0 +1,7 @@
+:host {
+  svg {
+    margin: 8px;
+    &.svgsun { color: #fdce43; }
+    &.svgmoon { color: #c4cce5; }
+  }
+}
