@@ -1,3 +1,14 @@
 :host {
-  display: block;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mat-card {
+    padding: 0;
+  }
+
+  auth-login {
+    min-height: 200px;
+  }
 }

@@ -2,16 +2,15 @@
   <a
     mat-list-item
     *ngFor="let link of navLinks"
+    routerLinkActive="active"
     [routerLink]="link.path"
   >
     <mat-icon
       matListIcon>
       {{ link.icon }}
     </mat-icon>
-
-    <span>
+    <div matLine>
       {{ link.label }}
-    </span>
-
+    </div>
   </a>
 </mat-nav-list>

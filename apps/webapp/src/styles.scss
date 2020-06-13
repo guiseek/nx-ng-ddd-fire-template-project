@@ -18,13 +18,16 @@ $webapp-accent: mat-palette($mat-amber, A200, A100, A400);
 $webapp-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$webapp-theme: mat-dark-theme($webapp-primary, $webapp-accent, $webapp-warn);
-
+$webapp-light-theme: mat-light-theme($webapp-primary, $webapp-accent, $webapp-warn);
+$webapp-dark-theme: mat-dark-theme($webapp-primary, $webapp-accent, $webapp-warn);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($webapp-theme);
+@include angular-material-theme($webapp-light-theme);
 
+body.dark {
+  @include angular-material-theme($webapp-dark-theme);
+}
 /* You can add global styles to this file, and also import other style files */
 
 html,
@@ -50,6 +53,24 @@ body {
       justify-content: space-between;
 
       margin-right: 16px;
+    }
+  }
+}
+.text-center {
+  text-align: center;
+}
+.mat-ripple:hover {
+  cursor: pointer;
+}
+.placeholder-opacity {
+  .mat-form-field {
+    .mat-form-field-label {
+      color: currentColor;
+      opacity: 0.4;
+      transition: all 200ms linear;
+    }
+    &.mat-focused .mat-form-field-label {
+      opacity: 0.8;
     }
   }
 }

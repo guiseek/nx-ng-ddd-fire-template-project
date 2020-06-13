@@ -1,0 +1,59 @@
+<mat-table [dataSource]="dataSource">
+  <ng-content></ng-content>
+
+  <!-- Select Column -->
+  <ng-container matColumnDef="select">
+    <mat-header-cell *matHeaderCellDef>
+      <mat-checkbox
+        (change)="$event ? masterToggle() : null"
+        [checked]="selection?.hasValue() && isAllSelected()"
+        [indeterminate]="selection?.hasValue() && !isAllSelected()"
+        [aria-label]="checkboxLabel()"
+      >
+      </mat-checkbox>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-checkbox
+        (click)="$event.stopPropagation()"
+        (change)="$event ? selection.toggle(row) : null"
+        [checked]="selection?.isSelected(row)"
+        [aria-label]="checkboxLabel(row)"
+      >
+      </mat-checkbox>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{ element.id }} </mat-cell>
+  </ng-container>
+
+  <!-- Created Column -->
+  <ng-container matColumnDef="createdAt">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>
+      Criação
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.createdAt | date }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Created Column -->
+  <ng-container matColumnDef="updatedAt">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>
+      Alteração
+    </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{ element.updatedAt | date }}
+    </mat-cell>
+  </ng-container>
+
+  <!-- Context Column -->
+  <!-- <ng-container matColumnDef="context">
+    <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <ng-container *ngTemplateOutlet="contextTemplate;context:{row:element}"></ng-container>
+    </mat-cell>
+  </ng-container> -->
+</mat-table>

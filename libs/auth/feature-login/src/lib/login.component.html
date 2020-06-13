@@ -1,50 +1,55 @@
-<h1>auth-login</h1>
+<mat-horizontal-stepper [linear]="true" #stepper (selectionChange)="onDone($event.selectedIndex, inputPassword)">
 
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <mat-card>
-    <mat-card-title *ngIf="loginFacade.user$ | async as user">
-      {{ user.displayName }}
-      <p>{{ user.emailVerified }}</p>
-      <pre>{{ user.toJSON() | json }}</pre>
-    </mat-card-title>
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email">
-      <mat-error>Inválildo</mat-error>
-    </mat-form-field>
+  <mat-step [stepControl]="emailForm">
+    <form [formGroup]="emailForm">
+      <ng-template matStepLabel>Email</ng-template>
+      <mat-form-field>
 
-    <mat-form-field>
-      <mat-label>Senha</mat-label>
-      <input type="password" matInput formControlName="password">
-      <mat-error>Inváliida</mat-error>
-    </mat-form-field>
+        <input type="email" matInput autofocus formControlName="email" placeholder="nome@provedor.com" required>
 
-    <mat-card-content>
-      {{ error$ | async }}
-    </mat-card-content>
-    <mat-card-actions>
+        <mat-error *ngIf="emailForm.get('email') as email">
+          <span *ngIf="email.hasError('required')">
+            Seu email é obrigatório
+          </span>
+          <span *ngIf="email.hasError('email')">
+            Endereço de email inválido
+          </span>
+        </mat-error>
+      </mat-form-field>
 
-      <button type="button" mat-button (click)="loginFacade.logout()">
-        Sair
-      </button>
+      <div fxLayout="row" fxLayoutAlign="end">
+        <button mat-icon-button matStepperNext>
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="passwordForm">
+    <form [formGroup]="passwordForm">
+      <ng-template matStepLabel>Senha</ng-template>
+      <mat-form-field>
 
-      <button type="button" mat-stroked-button [authSocialLogin]="'google'">
-        Usar Google
-      </button>
+        <input type="password" matInput #inputPassword formControlName="password" placeholder="Ex. Ae10u!" required>
 
-      <button mat-raised-button color="primary">
-        Login
-      </button>
+        <mat-error *ngIf="passwordForm.get('password') as password">
+          <span *ngIf="password.hasError('minLength')">
+            Mínimo de 6 caracteres
+          </span>
+          <span *ngIf="password.hasError('passwordStrength')">
+            {{ password.getError('passwordStrength') }}
+          </span>
+        </mat-error>
 
+      </mat-form-field>
+      <div fxLayout="row" fxLayoutAlign="space-between">
+        <button mat-icon-button matStepperPrevious>
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onSubmit()">
+          <mat-icon>done</mat-icon>
+        </button>
+      </div>
+    </form>
+  </mat-step>
 
-    </mat-card-actions>
-  </mat-card>
-</form>
-
-<!-- <table class="table">
-  <tr *ngFor="let authUser of authUserList$ | async">
-    <td>{{authUser.id}}</td>
-    <td>{{authUser.name}}</td>
-    <td>{{authUser.description}}</td>
-  </tr>
-</table> -->
+</mat-horizontal-stepper>

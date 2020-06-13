@@ -19,13 +19,16 @@ export class AuthGuard implements CanActivate {
   ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
       return this.service.getUser().pipe(
-        map(user => (!!user && user.emailVerified)),
+        // map(user => (!!user && user.emailVerified)),
+        map(user => !!user),
         map((user) => {
           console.log(user);
           if (!user) {
             this.router.navigate(['/auth'], {
               queryParamsHandling: 'merge',
-              queryParams: { goTo: state.url }
+              queryParams: {
+                redirectLoggedInTo: state.url
+              }
             })
           }
           return user;

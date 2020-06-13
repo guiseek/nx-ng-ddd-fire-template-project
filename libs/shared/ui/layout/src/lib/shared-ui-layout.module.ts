@@ -1,3 +1,4 @@
+import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { LayoutModule } from '@angular/cdk/layout';
 import { PortalModule } from '@angular/cdk/portal';
@@ -8,15 +9,22 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { CardListComponent } from './card-list/card-list.component';
 import { CardsComponent } from './card-list/cards/cards.component';
 import { ListComponent } from './card-list/list/list.component';
+import { NavGroupComponent } from './nav-group/nav-group.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { NavShell, NAV_SHELL, NAV_SHELL_CONFIG } from './nav-shell/nav-shell-injectors';
 import { NavShellComponent } from './nav-shell/nav-shell.component';
+import { NavTabsComponent } from './nav-tabs/nav-tabs.component';
+import { TabContentDirective } from './nav-tabs/tab/tab-content.directive';
+import { TabComponent } from './nav-tabs/tab/tab.component';
 import { PortalWindowComponent } from './portal-window/portal-window.component';
+import { NavComponent } from './nav/nav.component';
+import { ToggleThemeComponent } from './toggle-theme/toggle-theme.component';
 
 const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
 
@@ -28,11 +36,13 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     LayoutModule,
     MatIconModule,
     MatListModule,
+    MatTabsModule,
     DragDropModule,
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatButtonToggleModule
+    MatButtonToggleModule,
+    CdkAccordionModule,
   ],
   declarations: [
     NavShellComponent,
@@ -40,7 +50,13 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     NavListComponent,
     CardListComponent,
     CardsComponent,
-    ListComponent
+    ListComponent,
+    NavTabsComponent,
+    TabComponent,
+    TabContentDirective,
+    NavGroupComponent,
+    NavComponent,
+    ToggleThemeComponent
   ],
   exports: [
     NavShellComponent,
@@ -48,7 +64,13 @@ const merge = <T, U>(t: T[], u: U[]) => [...t, ...u];
     NavListComponent,
     CardListComponent,
     CardsComponent,
-    ListComponent
+    ListComponent,
+    NavTabsComponent,
+    TabComponent,
+    TabContentDirective,
+    NavGroupComponent,
+    NavComponent,
+    ToggleThemeComponent
   ]
 })
 export class SharedUiLayoutModule {

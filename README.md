@@ -109,18 +109,17 @@ ng generate @ngneat/spectator:spectator-component --name=components/account-menu
 
 
 # Shared
-- ## Ui (*User Interface*)
 
-> ## Ui
-> ```sh
-> ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
->
-> ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
->
-> ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
->
-> npm i ngx-currency
-> ```
+## Ui
+```sh
+ng generate @nrwl/angular:library --name=ui-currency --style=scss --directory=shared --publishable --tags=domain:shared,type:ui --no-interactive
+
+ng generate @schematics/angular:component --name=form-currency --project=shared-ui-currency --style=scss --export --type=Field --no-interactive
+
+ng generate @schematics/angular:directive --name=currency-field --project=shared-ui-currency --no-flat --skipImport
+
+npm i ngx-currency
+```
 
 ```sh
 
@@ -142,11 +141,39 @@ ng generate @angular/material:navigation --name=nav-shell --project=shared-ui-la
 
 ng generate @ngneat/spectator:spectator-component --name=nav-list --project=shared-ui-layout --style=scss --export --withHost
 
+ng generate @ngneat/spectator:spectator-component --name=nav-group --project=shared-ui-layout --style=scss --export --withHost
+
 ng generate @ngneat/spectator:spectator-component --name=portal-window --project=shared-ui-layout --style=scss --export --inlineTemplate --withCustomHost
 
 ng generate @ngneat/spectator:spectator-component --name=card-list --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=nav-tabs --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-component --name=nav-tabs/tab --project=shared-ui-layout --style=scss --changeDetection=OnPush --export --withHost --no-interactive
+
+ng generate @ngneat/spectator:spectator-directive --name=nav-tabs/tab/tab-content --project=shared-ui-layout --export
 ```
 
+
+# Ui Layout
+```sh
+ng generate @nrwl/angular:library --name=layout --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive
+ng generate @ngneat/spectator:spectator-component --name=toggle-theme --project=shared-ui-layout --style=scss --export --no-interactive
+```
+
+# Ui List
+```sh
+ng generate @ngneat/spectator:spectator-component --name=list --project=shared-ui-list --style=scss --export --withHost --no-interactive
+ng generate @ngneat/spectator:spectator-component --name=list-desktop --project=shared-ui-list --style=scss --export --withHost --no-interactive
+ng generate @ngneat/spectator:spectator-component --name=list-phone --project=shared-ui-list --style=scss --export --withHost --no-interactive
+```
+
+# Ui Table
+```sh
+ng generate @nrwl/angular:library --name=table --style=scss --directory=shared/ui --publishable --tags=domain:shared,type:ui --no-interactive -d
+
+ng generate @angular/material:table --name=table --project=shared-ui-table --style=scss --changeDetection=OnPush --skipImport --no-interactive --flat
+```
 
 # Ui Select
 ```
@@ -172,7 +199,8 @@ ng generate @angular/material:addressForm --name=address-form --project=shared-u
 ng generate @ngneat/spectator:spectator-component --name=time-select --project=shared-ui-datetime --style=scss --export --withHost
 ng generate @ngneat/spectator:spectator-component --name=time-select/time-option --project=shared-ui-datetime --style=scss --export --withCustomHost
 ```
-### Ui Date Time / Nove
+
+## Ui Date Time / Nove
 ```sh
 ng g @nrwl/angular:move --project shared-ui-datetime --destination shared/ui/date-time
 ```
@@ -180,6 +208,88 @@ ng g @nrwl/angular:move --project shared-ui-datetime --destination shared/ui/dat
 ```sh
 ng generate @ngneat/spectator:spectator-component --name=date-picker --project=shared-ui-date-time --style=scss --export --withHost --no-interactive
 ```
+
+## Ui Photo
+```sh
+ng generate @nrwl/angular:library --name=photo --style=scss --directory=shared/ui --publishable --tags=type:ui,domain:shared --no-interactive
+
+ng g c avatar --project shared-ui-photo --export
+ng g c crop-photo --project shared-ui-photo --export
+ng g c drop-photo --project shared-ui-photo --export
+ng g d drop-photo --project shared-ui-photo --flat=false --export
+```
+
+## Shape overlays
+```sh
+ng generate @schematics/angular:component --name=components/shape-overlays --project=customer-feature-main --style=scss --changeDetection=OnPush --inlineTemplate --skipImport --skipTests
+```
+
+# Customer
+
+## Domain
+
+```sh
+ng generate @angular-architects/ddd:domain --name=customer --no-interactive
+```
+
+## Feature
+```sh
+ng generate @angular-architects/ddd:feature --name=main --domain=customer --app=webapp --entity=customer --no-interactive
+```
+
+## Components
+```sh
+ng generate @schematics/angular:component --name=components/list --project=customer-feature-main --style=scss --no-interactive;
+
+ng generate @schematics/angular:component --name=components/form --project=customer-feature-main --style=scss --no-interactive
+```
+
+## Containers
+```sh
+ng generate @schematics/angular:component --name=contaiers/new --project=customer-feature-main --style=scss --no-interactive;
+
+ng generate @schematics/angular:component --name=contaiers/detail --project=customer-feature-main --style=scss --no-interactive
+
+ng generate @schematics/angular:component --name=contaiers/home --project=customer-feature-main --style=scss --no-interactive
+```
+
+---
+
+# Playground
+
+```sh
+ng add agular-playground
+
+ng generate angular-playground:sandbox --name=crop-photo --path=playground --no-interactive --dry-run
+
+
+```
+
+# Patterns
+
+### Categories for Libraries
+In their free e-book about Monorepo Patterns, Nrwl – the company behind Nx – use the following categories for libraries:
+
+- `feature`: Implements a use case with smart components
+- `data-access`: Implements data accesses, e.g. via HTTP or WebSockets
+- `ui`: Provides use case-agnostic and thus reusable components (dumb components)
+- `util`: Provides helper functions
+
+> ***Please*** note the separation between smart and dumb components.
+
+Smart components within feature libraries are use case-specific. An example is a component which enables a product search.
+
+On the contrary, dumb components do not know the current use case. They receive data via inputs, display it in a specific way, and issue events. Such presentational components “just” help to implement use cases and hence they are reusable. An example is a date-time picker, which is unaware of which use case it supports. Hence, it is available within all use cases dealing with dates.
+
+In addition to this, I also use the following categories:
+
+- `shell`: For an application that has multiple domains, a shell provides the entry - point for a domain
+- `api`: Provides functionalities exposed to other domains
+- `domain`: Domain logic like calculating additional expenses (not used here), validations or facades for use cases and state management. I will come back to this in the next chapter.
+
+
+
+
 
 This project was generated using [Nx](https://nx.dev).
 

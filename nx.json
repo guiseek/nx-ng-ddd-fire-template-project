@@ -26,6 +26,9 @@
       "tags": [],
       "implicitDependencies": ["webapp"]
     },
+    "playground": {
+      "tags": ["domain:app", "type:app"]
+    },
     "api": {
       "tags": []
     },
@@ -74,9 +77,6 @@
     "auth-api": {
       "tags": ["type:api", "domain:auth/api", "domain:auth"]
     },
-    "shared-util-auth": {
-      "tags": ["type:util", "domain:shared"]
-    },
     "shared-ui-address": {
       "tags": ["domain:shared", "type:ui"]
     },
@@ -91,6 +91,27 @@
     },
     "shared-util-catalog": {
       "tags": ["type:util", "domain:catalog"]
+    },
+    "shared-ui-photo": {
+      "tags": ["type:ui", "domain:shared"]
+    },
+    "auth-feature-register": {
+      "tags": ["domain:auth", "type:feature"]
+    },
+    "customer-domain": {
+      "tags": ["domain:customer", "type:domain-logic"]
+    },
+    "customer-feature-main": {
+      "tags": ["domain:customer", "type:feature"]
+    },
+    "shared-ui-table": {
+      "tags": ["domain:shared", "type:ui"]
+    },
+    "dashboard-shell": {
+      "tags": ["type:shell"]
+    },
+    "shared-ui-list": {
+      "tags": ["type:ui"]
     }
   }
 }

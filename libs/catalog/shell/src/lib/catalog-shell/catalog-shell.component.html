@@ -1,13 +1,47 @@
 <seek-nav-shell subtitle="Catálogo">
 
+  <!-- <seek-drop-photo class="profile">
+    <mat-card>
+      <mat-card-title class="text-center">Gui Seek</mat-card-title>
+      <seek-avatar size="100%" src="assets/avatar-male.svg"></seek-avatar>
+    </mat-card>
+  </seek-drop-photo> -->
+
   <header>
     <a routerLink="auth" mat-button>Login</a>
-
+    <button
+      type="button"
+      mat-button
+      (click)="tabsComponent.openTab('Endereço', addressForm, { })"
+    >
+      Adicionar endereço
+    </button>
     <auth-account></auth-account>
   </header>
 
   <main class="main-container" role="main">
-    <catalog-manage-products></catalog-manage-products>
+
+    <seek-nav-tabs #seekTabs="seek-nav-tabs">
+      <seek-tab title="Produtos">
+        <catalog-manage-products></catalog-manage-products>
+      </seek-tab>
+      <seek-tab title="Categorias">
+        <catalog-manage-products></catalog-manage-products>
+      </seek-tab>
+      <seek-tab title="Clientes">
+        <catalog-manage-products></catalog-manage-products>
+      </seek-tab>
+      <!-- <seek-tab>
+        Content 123 - Loaded: {{getTimeLoaded(1) | date:'medium'}}
+      </seek-tab> -->
+    </seek-nav-tabs>
+
+    <!-- <catalog-manage-products></catalog-manage-products> -->
   </main>
 
 </seek-nav-shell>
+
+<ng-template let-person="data" #addressForm>
+  <pre>{{ person | json }}</pre>
+  <seek-address-form></seek-address-form>
+</ng-template>

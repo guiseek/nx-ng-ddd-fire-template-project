@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NavTabsComponent } from '@seek/shared/ui/layout';
 
 @Component({
   selector: 'seek-catalog-shell',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatalogShellComponent implements OnInit {
 
+  @ViewChild(NavTabsComponent) tabsComponent: NavTabsComponent;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  openAdress() {
+
+  }
+
+  // tabLoadTimes: Date[] = [];
+
+  // getTimeLoaded(index: number) {
+  //   if (!this.tabLoadTimes[index]) {
+  //     this.tabLoadTimes[index] = new Date();
+  //   }
+
+  //   console.log(index, this.tabLoadTimes[index]);
+
+  //   return this.tabLoadTimes[index];
+  // }
 
 }

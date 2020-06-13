@@ -1,9 +1,20 @@
-.table td {
-    border: 1px solid;
-    padding:10px;
-}
-
-.mat-card-actions {
+:host {
+  display: flex;
+  .mat-stepper-horizontal {
+    flex: 1;
+  }
+  // margin: 12px;
+  .go-ahead {
+    margin: 6px 0;
+    width: 100%;
+  }
+  form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }

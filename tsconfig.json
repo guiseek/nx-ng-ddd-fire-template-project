@@ -37,12 +37,22 @@
       "@seek/shared/ui/select": ["libs/shared/ui/select/src/index.ts"],
       "@seek/shared/ui/common": ["libs/shared/ui/common/src/index.ts"],
       "@seek/auth/api": ["libs/auth/api/src/index.ts"],
-      "@seek/shared/util-auth": ["libs/shared/util-auth/src/index.ts"],
       "@seek/shared/ui/address": ["libs/shared/ui/address/src/index.ts"],
       "@seek/shared/ui/layout": ["libs/shared/ui/layout/src/index.ts"],
       "@seek/catalog/api": ["libs/catalog/api/src/index.ts"],
       "@seek/shared/ui/date-time": ["libs/shared/ui/date-time/src/index.ts"],
-      "@seek/shared/util-catalog": ["libs/shared/util-catalog/src/index.ts"]
+      "@seek/shared/util-catalog": ["libs/shared/util-catalog/src/index.ts"],
+      "@seek/shared/ui/photo": ["libs/shared/ui/photo/src/index.ts"],
+      "@seek/auth/feature-register": [
+        "libs/auth/feature-register/src/index.ts"
+      ],
+      "@seek/customer/domain": ["libs/customer/domain/src/index.ts"],
+      "@seek/customer/feature-main": [
+        "libs/customer/feature-main/src/index.ts"
+      ],
+      "@seek/shared/ui/table": ["libs/shared/ui/table/src/index.ts"],
+      "@seek/dashboard/shell": ["libs/dashboard/shell/src/index.ts"],
+      "@seek/shared/ui/list": ["libs/shared/ui/list/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,7 @@
+<p>crop-photo works!</p>
+
+<img [src]="photo" alt="">
+
+<input #input type="file" (change)="onChange($event.target.files)" name="photo" id="photo">
+
+<canvas #canvas></canvas>

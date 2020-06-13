@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -49,6 +51,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatProgressBarModule,
     MatExpansionModule,
     MatTooltipModule,
+    MatCheckboxModule,
+    MatRippleModule,
   ],
 })
 export class SharedUiMaterialModule { }

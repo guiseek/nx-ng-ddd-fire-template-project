@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { AuthDomainModule } from '@seek/auth/domain';
 import { SharedUiCommonModule, SharedUiMaterialModule } from '@seek/shared/ui/common';
 import { AccountComponent } from './account.component';
@@ -7,10 +6,9 @@ import { AccountMenuComponent } from './components/account-menu/account-menu.com
 
 @NgModule({
   imports: [
-    SharedUiMaterialModule,
+    AuthDomainModule,
     SharedUiCommonModule,
-    RouterModule,
-    AuthDomainModule
+    SharedUiMaterialModule
   ],
   declarations: [AccountComponent, AccountMenuComponent],
   exports: [AccountComponent, AccountMenuComponent],
