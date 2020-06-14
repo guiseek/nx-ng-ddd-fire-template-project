@@ -10,6 +10,12 @@ import { ShellComponent } from './shell.component';
     CommonModule,
     SharedUiLayoutModule.forRoot([
       {
+        path: '/company',
+        label: 'Empresa',
+        icon: 'home',
+        roles: ['admin']
+      },
+      {
         icon: 'account_circle',
         label: 'Conta',
         roles: [],

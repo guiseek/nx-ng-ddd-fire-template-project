@@ -44,7 +44,13 @@
       "@seek/dashboard/shell": ["libs/dashboard/shell/src/index.ts"],
       "@seek/shared/ui/list": ["libs/shared/ui/list/src/index.ts"],
       "@seek/catalog/domain": ["libs/catalog/domain/src/index.ts"],
-      "@seek/catalog/feature-shell": ["libs/catalog/feature-shell/src/index.ts"]
+      "@seek/catalog/feature-shell": [
+        "libs/catalog/feature-shell/src/index.ts"
+      ],
+      "@seek/company/domain": ["libs/company/domain/src/index.ts"],
+      "@seek/company/feature-manage": [
+        "libs/company/feature-manage/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

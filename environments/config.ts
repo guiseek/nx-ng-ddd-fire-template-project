@@ -8,6 +8,9 @@ export const config = {
     },
     customer: {
       coll: 'customers'
+    },
+    company: {
+      coll: 'companies'
     }
   }
 }

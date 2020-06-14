@@ -100,6 +100,12 @@
     },
     "catalog-feature-shell": {
       "tags": ["domain:catalog", "type:feature"]
+    },
+    "company-domain": {
+      "tags": ["domain:company", "type:domain-logic"]
+    },
+    "company-feature-manage": {
+      "tags": ["domain:company", "type:feature"]
     }
   }
 }

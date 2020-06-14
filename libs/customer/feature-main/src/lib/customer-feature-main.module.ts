@@ -17,12 +17,12 @@ import { MainComponent } from './main.component';
   imports: [
     SharedUiPhotoModule,
     SharedUiLayoutModule.forRoot([
-      {
-        path: '/customer',
-        label: 'Clientes',
-        icon: 'people',
-        roles: ['admin']
-      }
+      // {
+      //   path: '/customer',
+      //   label: 'Clientes',
+      //   icon: 'people',
+      //   roles: ['admin']
+      // }
     ]),
     SharedUiTableModule,
     SharedUiCommonModule,

@@ -175,6 +175,13 @@
               "domain:catalog",
               "domain:shared"
             ]
+          },
+          {
+            "sourceTag": "domain:company",
+            "onlyDependOnLibsWithTags": [
+              "domain:company",
+              "domain:shared"
+            ]
           }
         ]
       }

@@ -1,0 +1,39 @@
+<seek-nav-shell subtitle="Organizações">
+  <nav>
+    <seek-nav-list></seek-nav-list>
+  </nav>
+  <header>
+    <button type="button" mat-button (click)="add()">
+      <mat-icon>add</mat-icon> <span>Nova</span>
+    </button>
+  </header>
+  <main>
+    <seek-list fxLayout="column" fxLayoutGap="16px">
+      <seek-list-item *ngFor="let company of companies$ | async" [item]="company">
+        <h3 class="mat-h3">
+          {{ company.name }}
+        </h3>
+        <p>
+          {{ company.description }}
+        </p>
+      </seek-list-item>
+    </seek-list>
+  </main>
+
+
+
+
+
+<!-- <pre>{{ (allCompany$ | async) | json }}</pre>
+
+<pre>{{ (selectedCompany$ | async) | json }}</pre>
+
+<table class="table">
+  <tr *ngFor="let employee of employeeList$ | async">
+    <td>{{employee.id}}</td>
+    <td>{{employee.name}}</td>
+    <td>{{employee.description}}</td>
+  </tr>
+</table> -->
+
+</seek-nav-shell>

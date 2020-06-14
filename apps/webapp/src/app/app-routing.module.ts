@@ -7,7 +7,13 @@ import { RouterModule } from '@angular/router';
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'dashboard'
+        redirectTo: 'company'
+      },
+      {
+        path: 'company',
+        loadChildren: () =>
+          import('@seek/company/feature-manage')
+            .then(m => m.CompanyFeatureManageModule)
       },
       {
         path: 'dashboard',

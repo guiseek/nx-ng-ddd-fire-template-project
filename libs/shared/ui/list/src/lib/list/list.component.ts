@@ -1,23 +1,23 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Launch} from "@monodemo/graphql-schema";
+import { AfterContentInit, Component, ContentChildren, QueryList } from '@angular/core';
+import { ListItemBaseComponent } from './list-item-base.component';
 
 @Component({
-  selector: 'monodemo-list',
+  selector: 'seek-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent extends ListItemBaseComponent  implements AfterContentInit {
 
-  @Input() launches: Launch[];
-  @Output() selected = new EventEmitter<Launch>();
+  // @Input() items: Array<ListItem>;
 
-  constructor() { }
+  @ContentChildren(ListItemBaseComponent) listBaseComponent: QueryList<ListItemBaseComponent>;
 
-  ngOnInit() {
+
+  ngAfterContentInit() {
+    console.log(this.listBaseComponent);
+    setTimeout(() => {
+      console.log(this.listBaseComponent);
+    }, 3000)
+
   }
-
-  select(launch: Launch) {
-    this.selected.emit(launch);
-  }
-
 }

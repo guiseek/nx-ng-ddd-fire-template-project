@@ -1,21 +1,17 @@
-.nav-shell-container {
-  height: 100%;
-}
-
-.nav-shell {
-  width: 200px;
-}
-.nav-shell-content {
-  display: flex;
-  flex-direction: column;
-}
-
-// .shell-nav .mat-toolbar {
-//   // background: inherit;
-// }
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 1;
+:host {
+  .nav-shell-container {
+    height: 100%;
+  }
+  .nav-shell {
+    width: 200px;
+  }
+  .nav-shell-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 }
