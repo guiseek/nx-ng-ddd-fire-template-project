@@ -11,18 +11,12 @@ export interface NavShell {
   children?: Array<NavShell>;
 }
 export const NAV_SHELL_CONFIG: Array<NavShell> = [
-  {
-    path: '/catalog',
-    label: 'Catálogo',
-    roles: ['admin'],
-    icon: 'list'
-  },
-  {
-    path: '/auth',
-    label: 'Login',
-    roles: [],
-    icon: 'account_circle'
-  }
+  // {
+  //   path: '/auth',
+  //   label: 'Login',
+  //   roles: [],
+  //   icon: 'account_circle'
+  // }
 ];
 
 export const NAV_SHELL = new InjectionToken<NavShell[]>('nav.shell');

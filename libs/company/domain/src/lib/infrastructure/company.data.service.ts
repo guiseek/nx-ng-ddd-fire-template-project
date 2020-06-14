@@ -6,6 +6,7 @@ import { Company } from './../entities/company';
 
 @Injectable({ providedIn: 'root' })
 export class CompanyDataService extends FirestoreDataService<Company> {
+
   private path = config.db.company.coll;
 
   constructor(protected afs: AngularFirestore) {

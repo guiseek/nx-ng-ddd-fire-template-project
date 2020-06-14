@@ -1230,6 +1230,50 @@
           "style": "scss"
         }
       }
+    },
+    "root-shell": {
+      "projectType": "library",
+      "root": "libs/root/shell",
+      "sourceRoot": "libs/root/shell/src",
+      "prefix": "seek",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/root/shell/tsconfig.lib.json",
+            "project": "libs/root/shell/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/root/shell/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/root/shell/tsconfig.lib.json",
+              "libs/root/shell/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/root/shell/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/root/shell/jest.config.js",
+            "tsConfig": "libs/root/shell/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/root/shell/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
     }
   },
   "cli": {

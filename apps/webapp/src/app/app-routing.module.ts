@@ -6,41 +6,18 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       {
         path: '',
-        pathMatch: 'full',
-        redirectTo: 'company'
-      },
-      {
-        path: 'company',
         loadChildren: () =>
-          import('@seek/company/feature-manage')
-            .then(m => m.CompanyFeatureManageModule)
-      },
-      {
-        path: 'dashboard',
-        loadChildren: () =>
-          import('@seek/dashboard/shell')
-            .then(m => m.DashboardShellModule)
+          import('@seek/root/shell')
+            .then((m) => m.RootShellModule),
       },
       {
         path: 'auth',
         loadChildren: () =>
           import('@seek/auth/shell')
-            .then(m => m.AuthShellModule)
+            .then((m) => m.AuthShellModule),
       },
-      {
-        path: 'catalog',
-        loadChildren: () =>
-          import('@seek/catalog/feature-shell')
-            .then(m => m.CatalogFeatureShellModule)
-      },
-      {
-        path: 'customer',
-        loadChildren: () =>
-          import('@seek/customer/feature-main')
-            .then(m => m.CustomerFeatureMainModule)
-      },
-    ]),
+    ], { initialNavigation: 'enabled' }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
