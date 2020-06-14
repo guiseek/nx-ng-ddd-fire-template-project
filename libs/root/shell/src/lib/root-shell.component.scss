@@ -1,3 +1,9 @@
 :host {
+  overflow: hidden;
   flex: 1;
+
+  main.flex-column-full {
+    height: 100%;
+    overflow: hidden;
+  }
 }

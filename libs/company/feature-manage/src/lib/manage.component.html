@@ -1,23 +1,10 @@
-<seek-list fxLayout="column" fxLayoutGap="16px">
-  <seek-list-item *ngFor="let company of companies$ | async" [item]="company">
-    <h3 class="mat-h3">
+<mat-list fxLayout="column" fxLayoutGap="16px">
+  <mat-list-item *ngFor="let company of companies$ | async">
+    <h3 mat-line>
       {{ company.name }}
     </h3>
-    <p>
+    <p mat-line>
       {{ company.description }}
     </p>
-  </seek-list-item>
-</seek-list>
-
-
-<!-- <pre>{{ (allCompany$ | async) | json }}</pre>
-
-<pre>{{ (selectedCompany$ | async) | json }}</pre>
-
-<table class="table">
-  <tr *ngFor="let employee of employeeList$ | async">
-    <td>{{employee.id}}</td>
-    <td>{{employee.name}}</td>
-    <td>{{employee.description}}</td>
-  </tr>
-</table> -->
+  </mat-list-item>
+</mat-list>

@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   columns: TableCols<Customer> = [
     'select', 'id', 'name'
   ];
-  selected: Customer[];
+  selected: Customer[] = [];
 
   customerList$ = this.mainFacade.customerList$;
 
@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
   onClick(value) {
     console.log(value);
   }
-  onSelect(value) {
+  onSelect(value: Customer[]) {
     console.log(value);
+    this.selected = value;
   }
 }

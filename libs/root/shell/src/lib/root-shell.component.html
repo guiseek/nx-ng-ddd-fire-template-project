@@ -1,6 +1,16 @@
-<seek-nav-shell subtitle="Organizações">
-  <nav>
-    <seek-nav-list></seek-nav-list>
+<seek-nav-shell aria-label="Catálogo de produtos">
+  <nav role="navigation" aria-label="Navegação principal">
+    <section>
+      <seek-toggle-theme></seek-toggle-theme>
+    </section>
+
+    <section>
+      <seek-nav-list></seek-nav-list>
+    </section>
+
+    <section>
+      <seek-toggle-theme></seek-toggle-theme>
+    </section>
   </nav>
 
   <header>
@@ -10,7 +20,8 @@
     </a>
   </header>
 
-  <main role="main">
+  <main role="main" class="flex-column-full">
     <router-outlet></router-outlet>
   </main>
+
 </seek-nav-shell>

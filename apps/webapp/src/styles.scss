@@ -27,6 +27,10 @@ $webapp-dark-theme: mat-dark-theme($webapp-primary, $webapp-accent, $webapp-warn
 
 body.dark {
   @include angular-material-theme($webapp-dark-theme);
+
+  .mat-table {
+    // background-color: rgba(0,0,0,0.1);
+  }
 }
 /* You can add global styles to this file, and also import other style files */
 
@@ -65,6 +69,9 @@ body {
 .mat-ripple:hover {
   cursor: pointer;
 }
+.mat-column-select {
+  max-width: 60px;
+}
 .placeholder-opacity {
   .mat-form-field {
     .mat-form-field-label {
@@ -76,4 +83,14 @@ body {
       opacity: 0.8;
     }
   }
+}
+
+.flex-column-full {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+.grid-container {
+  // margin: 20px;
+  margin: 8px;
 }

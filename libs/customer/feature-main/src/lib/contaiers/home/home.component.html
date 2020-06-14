@@ -1,13 +1,16 @@
-<p>home works!</p>
-
-<pre>
-  s: {{ selected }}
-</pre>
-
-<customer-list
-  [columns]="columns"
-  [selected]="selected"
-  [items]="customerList$ | async"
-  (rowClicked)="onClick($event)"
-  (selectionChange)="onSelect($event)"
-></customer-list>
+<div class="container-overflow">
+  <customer-list
+    [columns]="columns"
+    [selected]="selected"
+    [items]="customerList$ | async"
+    (rowClicked)="onClick($event)"
+    (selectionChange)="onSelect($event)"
+  ></customer-list>
+</div>
+<mat-toolbar>
+  <mat-chip-list>
+    <mat-chip *ngFor="let customer of selected">
+      {{ customer.name }}
+    </mat-chip>
+  </mat-chip-list>
+</mat-toolbar>

@@ -34,11 +34,10 @@ export class ListComponent implements AfterContentInit {
   }
 
   @Input() columns: TableCols<Customer> = [
-    'id',
+    // 'id',
     'name',
-    // 'description'
+    'description'
   ];
-  // @Input() items: Customer[];
   @Input() set items(values: Customer[]) {
     this.dataSource = new MatTableDataSource(values);
     this.dataSource.paginator = this.paginator;

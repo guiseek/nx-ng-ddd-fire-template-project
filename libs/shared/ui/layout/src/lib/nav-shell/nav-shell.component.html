@@ -7,14 +7,12 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="(isHandset$ | async) === false">
 
-    <!-- <ng-content select=".profile"></ng-content> -->
-
-    <ng-content select="nav"></ng-content>
-
-    <!-- <seek-nav-list></seek-nav-list> -->
+    <aside aria-label="">
+      <ng-content select="nav,section"></ng-content>
+    </aside>
 
   </mat-sidenav>
-  <mat-sidenav-content class="nav-shell-content" role="contentinfo">
+  <mat-sidenav-content class="nav-shell-content" role="contentinfo" [attr.aria-label]="ariaLabel">
     <mat-toolbar color="primary">
       <button
         type="button"
@@ -25,7 +23,9 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>{{ subtitle }}</span>
+      <span>{{ ariaLabel }}</span>
+
+      <small>{{ subtitle }}</small>
 
       <span class="spacer"></span>
 

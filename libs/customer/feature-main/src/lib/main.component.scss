@@ -1,9 +1,12 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  height: 100%;
 
-  .main-container {
-    padding: 6px;
-    flex: 1;
+  .mat-tab-nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 }

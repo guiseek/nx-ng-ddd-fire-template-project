@@ -18,6 +18,9 @@ export class NavShellComponent {
   @Input()
   subtitle = '';
 
+  @Input('aria-label')
+  ariaLabel: string;
+
   @ContentChild(NavListComponent) navList: NavListComponent;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
