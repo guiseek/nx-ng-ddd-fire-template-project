@@ -1,68 +1,62 @@
-<seek-nav-shell subtitle="Catálogo">
+<mat-toolbar>
+  <span>Clientes</span>
+</mat-toolbar>
 
-  <!-- <seek-drop-photo class="profile">
-    <mat-card>
-      <mat-card-title class="text-center">Gui Seek</mat-card-title>
-      <seek-avatar size="100%" src="assets/avatar-male.svg"></seek-avatar>
-    </mat-card>
-  </seek-drop-photo> -->
+<main class="main-container" role="main">
 
-  <header>
-    <!-- <auth-account></auth-account> -->
-  </header>
+  <nav mat-tab-nav-bar>
+    <a
+      mat-tab-link *ngFor="let link of navLinks"
+      [routerLink]="link.path" routerLinkActive
+      [routerLinkActiveOptions]="{ exact: true }"
+      #rla="routerLinkActive" [active]="rla.isActive"
+    >
+      {{link.label}}
+    </a>
+  </nav>
 
-  <main class="main-container" role="main">
+  <router-outlet></router-outlet>
 
-    <nav mat-tab-nav-bar>
-      <a mat-tab-link
-         *ngFor="let link of navLinks"
-         [routerLink]="link.path"
-         routerLinkActive
-         [routerLinkActiveOptions]="{ exact: true }"
-         #rla="routerLinkActive"
-         [active]="rla.isActive">
-        {{link.label}}
-      </a>
-    </nav>
 
-    <router-outlet></router-outlet>
+</main>
 
-    <!-- <mat-table [dataSource]="dataSource">
 
-      <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
-      </ng-container>
 
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
-      </ng-container>
 
-      <ng-container matColumnDef="description">
-        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
-      </ng-container>
 
-      <ng-container matColumnDef="menu">
-        <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
-        <mat-cell *matCellDef="let element">
-          {{element.description}}
-        </mat-cell>
-      </ng-container>
 
-      <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
-      <mat-row
-        *matRowDef="let row; columns: columns;"
-      ></mat-row>
-    </mat-table>
+<!-- <mat-table [dataSource]="dataSource">
 
-    <mat-progress-bar *ngIf="!dataSource"></mat-progress-bar>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> # </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
 
-    <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="50"
-      [pageSizeOptions]="[25, 50, 100, 250]">
-    </mat-paginator> -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Produto </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
 
-  </main>
-</seek-nav-shell>
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+  </ng-container>
 
+  <ng-container matColumnDef="menu">
+    <mat-header-cell *matHeaderCellDef>  </mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      {{element.description}}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: columns;"
+  ></mat-row>
+</mat-table>
+
+<mat-progress-bar *ngIf="!dataSource"></mat-progress-bar>
+
+<mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="50"
+  [pageSizeOptions]="[25, 50, 100, 250]">
+</mat-paginator> -->

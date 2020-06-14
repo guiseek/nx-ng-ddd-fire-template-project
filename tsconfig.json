@@ -50,7 +50,8 @@
       "@seek/company/domain": ["libs/company/domain/src/index.ts"],
       "@seek/company/feature-manage": [
         "libs/company/feature-manage/src/index.ts"
-      ]
+      ],
+      "@seek/root/shell": ["libs/root/shell/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

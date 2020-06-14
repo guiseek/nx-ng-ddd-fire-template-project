@@ -13,17 +13,17 @@ import { ProductsFacade } from './application/products.facade';
   imports: [
     CommonModule,
     NxModule.forRoot(),
-    StoreModule.forRoot(
-      {},
-      {
-        metaReducers: !environment.production ? [] : [],
-        runtimeChecks: {
-          strictActionImmutability: true,
-          strictStateImmutability: true,
-        },
-      }
-    ),
-    EffectsModule.forRoot([ProductsEffects]),
+    // StoreModule.forRoot(
+    //   {},
+    //   {
+    //     metaReducers: !environment.production ? [] : [],
+    //     runtimeChecks: {
+    //       strictActionImmutability: true,
+    //       strictStateImmutability: true,
+    //     },
+    //   }
+    // ),
+    EffectsModule.forFeature([ProductsEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreModule.forFeature(
       fromProducts.PRODUCTS_FEATURE_KEY,

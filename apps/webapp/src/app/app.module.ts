@@ -13,7 +13,6 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { SharedUiLayoutModule } from '@seek/shared/ui/layout';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -27,23 +26,9 @@ registerLocaleData(localePt, 'pt-BR', localePtExtra);
     AngularFireAuthModule,
     AngularFirestoreModule,
     BrowserAnimationsModule,
-    SharedUiLayoutModule.forRoot([
-      {
-        icon: 'account_circle',
-        label: 'Conta',
-        roles: [],
-        path: '/account'
-      },
-      {
-        path: '/customer',
-        label: 'Clientes',
-        icon: 'people',
-        roles: ['admin']
-      }
-    ]),
     AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot([]),
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     StoreRouterConnectingModule.forRoot()

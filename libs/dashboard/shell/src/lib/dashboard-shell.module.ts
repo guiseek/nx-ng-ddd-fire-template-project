@@ -1,36 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { SharedUiLayoutModule } from '@seek/shared/ui/layout';
+import { SharedUiMaterialModule } from '@seek/shared/ui/common';
 import { SharedUiPhotoModule } from '@seek/shared/ui/photo';
+import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component';
 import { DashboardShellRoutingModule } from './dashboard-shell-routing.module';
 import { ShellComponent } from './shell.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    SharedUiLayoutModule.forRoot([
-      {
-        path: '/company',
-        label: 'Empresa',
-        icon: 'home',
-        roles: ['admin']
-      },
-      {
-        icon: 'account_circle',
-        label: 'Conta',
-        roles: [],
-        path: '/account'
-      },
-      {
-        path: '/customer',
-        label: 'Clientes',
-        icon: 'people',
-        roles: ['admin']
-      }
-    ]),
     SharedUiPhotoModule,
+    SharedUiMaterialModule,
     DashboardShellRoutingModule
   ],
-  declarations: [ShellComponent],
+  declarations: [
+    ShellComponent,
+    DashboardCardComponent
+  ],
 })
 export class DashboardShellModule {}

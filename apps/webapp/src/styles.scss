@@ -56,6 +56,9 @@ body {
     }
   }
 }
+.mat-button-base .mat-icon + span  {
+  padding-left: 12px;
+}
 .text-center {
   text-align: center;
 }

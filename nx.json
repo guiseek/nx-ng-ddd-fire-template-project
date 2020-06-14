@@ -106,6 +106,9 @@
     },
     "company-feature-manage": {
       "tags": ["domain:company", "type:feature"]
+    },
+    "root-shell": {
+      "tags": ["root"]
     }
   }
 }
